@@ -159,16 +159,32 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>最近看了很多学长和许多同龄人整的博客，然后心血来潮想自己搭一个玩玩。路子大致就是用了Hugo的框架，配置下github pages然后设置下vercel，再阿里云买个域名配置下DNS映射。这样网站既不用备案也能获得比较理想的访问速度。(游走在法律的边缘:D<br>
-或许以后会在这里面写写东西捏</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>最近看了很多学长和许多同龄人整的博客，然后心血来潮想自己搭一个玩玩。路子大致就是用了Hugo的框架，配置下github pages然后设置下vercel，再阿里云买个域名配置下DNS映射。这样网站既不用备案也能获得比较理想的访问速度。(游走在法律的边缘:D</p>
+<p>或许以后会在这里面写写东西捏</p>
 <ul class="pa0">
   
 </ul>
 <div class="mt6 instapaper_ignoref">
       
-      <div id="commento"></div>
-<script defer src="https://cdn.commento.io/js/commento.js"></script>
-
+      <head>
+    
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    
+  </head>
+  <body>
+    
+    <div id="waline"></div>
+    <script>
+      Waline.init({
+        el: '#waline',
+        serverURL: 'https://blog-comment-snowy.vercel.app',
+      });
+    </script>
+  </body>
       </div>
     </div>
 
