@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://Jiaaming.github.io/</loc>
-    <lastmod>2022-07-09T10:58:08-04:00</lastmod>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://Jiaaming.github.io/post/chapter-2/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
