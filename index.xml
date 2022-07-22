@@ -6,7 +6,23 @@
     <description>Recent content in Be natural, Be yourself. on Jiaming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://Jiaaming.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://Jiaaming.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>聊至深夜的一些感想</title>
+      <link>https://Jiaaming.github.io/post/chapter-3/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://Jiaaming.github.io/post/chapter-3/</guid>
+      <description>我在很长一段时间里一直以为大部分人的童年学习都是在恐惧中度过的。直到最近跟好几个哥们儿聊了下发现好像不完全是这样…
+小时候父亲常常重复的一句话就是“学习不好，可耻。”，用那种抑扬顿挫又沉重有力的语调，然后皱着眉头，双唇紧闭，面色凝重，用满是杀气的眼神的盯着我——真的不夸张。即便到了现在，仍能清楚的回忆出从一年级开始家长会带给我的阴影。
+每次家长在学校，我都会在家里默默祈祷，那种紧张程度远胜高考。然后家长会结束后，家里还会开一个“家庭会议”——其实就是批斗会。一般都会把餐桌收拾出来，父母坐一头，我做另一头，拿个本子，记各种各样需要改的问题，比如考试分数、课堂纪律、卷面整洁、学习态度等等…甚至二年级的某次家长会，老师提到我做广播体操不认真，于是父母把客厅收拾出来，让我把全套广播体操做给他们，然后看我哪里动作没做到位便指指点点。
+我这人属于是天生就很敏感，在这种氛围下就不得不“好好学习”，因为整个小学阶段极少收到过来自父母的正反馈，加上本身应试教育，大伙儿都挺努力，分数纯是一个看天赋和灵性的事儿，所以自然而然的不喜欢学习。那种时候想法也很单纯——虽然很厌恶学习，但是这种厌恶显然不及每次家长会后的恐惧，于是就这样被父母裹挟着成长。后来到大概七年级的时候，父母就渐渐不在像以前那样了。但奈何那种思维惯性已经养成了。
+其实想表达的是，真的很羡慕那些对某一学科或领域很热爱的那些人。童年经历真的会对一个人有很深的影响。你能指望一个这样环境学习，成长出来的人产生对某一学科的热爱和热情吗？即便现在真真切切的感到比原来有更热爱cs很多，但是也难说是因为学cs可以润，还是因为思想上的转变。
+有时候觉得人自出生起就被各种各样的东西裹挟着，小时候被父母裹挟，后来被制度裹挟，被自己裹挟，但总感觉人总不可能一辈子都被裹挟着活着。
+今年上海封城后真真切切的感到了Nothing matters。很难说是变得更通透还是更迷茫了，挺整蛊的
+当然，父母给我的良性影响要远远大于上述的负面影响。这个假期也有跟他们聊到那个时候的事。我的父母是非常开明，善良，有智慧的人。非常爱他们，小时候的教育理念可能是他们唯一做的不太好的地方 </description>
+    </item>
+    
     <item>
       <title>记录一下搭建中用到的有趣开源库&amp;组件</title>
       <link>https://Jiaaming.github.io/post/chapter-2/</link>
