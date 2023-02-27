@@ -107,5 +107,18 @@ Bilibili Chanel for my videos
 Your Name Email Address An email address is required. Message </description>
     </item>
     
+    <item>
+      <title>基于Vue-Springboot的论文管理系统</title>
+      <link>https://Jiaaming.github.io/post/chapter-6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://Jiaaming.github.io/post/chapter-6/</guid>
+      <description>ECNU数据库系统设计大作业-基于Vue-Springboot的论文管理系统 演示地址：
+ECNU-2022Spring-DatabaseTermProject第四组_哔哩哔哩_bilibili
+关于登录信息、权限显示 这里利用sessionStorage将用户的信息跟权限（理论上应该一起作为user信息返回的，这里分开存储。后续页面左侧Aside的访问也可以根据存储的sessionStorage解决。
+*sessionStorage 属性允许你访问一个 session Storage 对象。它与 localStorage 相似，不同之处在于 localStorage 里面存储的数据没有过期时间设置，而存储在 sessionStorage 里面的数据在页面会话结束时会被清除。页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。**在新标签或窗口打开一个页面时会在顶级浏览上下文中初始化一个新的会话，*这点和 session cookies 的运行方式不同。
+request.post(&amp;#34;/api/login&amp;#34;, this.form).then(res =&amp;gt; { console.log(res) if (res.code === 0) { console.log(3333) this.$message({ type: &amp;#34;success&amp;#34;, message: &amp;#34;登录成功&amp;#34; }) sessionStorage.setItem(&amp;#34;user&amp;#34;,JSON.stringify(res.data)) // 缓存用户信息 request.post(&amp;#34;/api/permission?user_id=&amp;#34; + res.data.user_id).then(res1 =&amp;gt; { console.log(res1) console.log(&amp;#34;permission Get&amp;#34;) sessionStorage.setItem(&amp;#34;userPermission&amp;#34;,JSON.stringify(res1)) // 缓存用户信息 let userStrr =sessionStorage.getItem(&amp;#34;userPermission&amp;#34;) || &amp;#34;{}&amp;#34; this.permissionList =JSON.parse(userStrr) activeRouter() this.$router.push(&amp;#34;/&amp;#34;) //登录成功之后进行页面的跳转，跳转到主页 }) // 登录成功的时候更新当前路由 //activeRouter() } else { this.$message({ type: &amp;#34;error&amp;#34;, message: res.</description>
+    </item>
+    
   </channel>
 </rss>

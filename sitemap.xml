@@ -68,5 +68,13 @@
     <loc>https://Jiaaming.github.io/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url><url>
+    <loc>https://Jiaaming.github.io/post/chapter-6/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://Jiaaming.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
