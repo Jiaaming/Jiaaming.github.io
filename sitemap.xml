@@ -2,17 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Jiaaming.github.io/post/chapter-5/</loc>
-    <lastmod>2022-12-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://Jiaaming.github.io/</loc>
-    <lastmod>2022-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://Jiaaming.github.io/tags/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://Jiaaming.github.io/post/chapter-6/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://Jiaaming.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2023-02-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://Jiaaming.github.io/post/chapter-5/</loc>
     <lastmod>2022-12-31T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -66,14 +76,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://Jiaaming.github.io/contact/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-6/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://Jiaaming.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

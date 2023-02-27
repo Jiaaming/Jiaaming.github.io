@@ -157,6 +157,33 @@ SE Undergraduate in ECNU  ||  live as a purist</p>
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/post/chapter-6/" class="color-inherit dim link">
+            基于Vue-Springboot的论文管理系统
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          演示地址：ECNU-2022Spring-DatabaseTermProject第四组_哔哩哔哩_bilibili
+关于登录信息、权限显示 这里利用sessionStorage将用户的信息跟权限（理论上应该一起作为user信息返回的，这里分开存储。后续页面左侧Aside的访问也可以根据存储的sessionStorage解决。
+*sessionStorage 属性允许你访问一个 session Storage 对象。它与 localStorage 相似，不同之处在于 localStorage 里面存储的数据没有过期时间设置，而存储在 sessionStorage 里面的数据在页面会话结束时会被清除。页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。**在新标签或窗口打开一个页面时会在顶级浏览上下文中初始化一个新的会话，*这点和 session cookies 的运行方式不同。
+request.post(&#34;/api/login&#34;, this.form).then(res =&gt; { console.log(res) if (res.code === 0) { console.log(3333) this.$message({ type: &#34;success&#34;, message: &#34;登录成功&#34; }) sessionStorage.setItem(&#34;user&#34;,JSON.stringify(res.data)) // 缓存用户信息 request.post(&#34;/api/permission?user_id=&#34; + res.data.user_id).then(res1 =&gt; { console.log(res1) console.log(&#34;permission Get&#34;) sessionStorage.setItem(&#34;userPermission&#34;,JSON.stringify(res1)) // 缓存用户信息 let userStrr =sessionStorage.getItem(&#34;userPermission&#34;) || &#34;{}&#34; this.permissionList =JSON.parse(userStrr) activeRouter() this.$router.push(&#34;/&#34;) //登录成功之后进行页面的跳转，跳转到主页 }) // 登录成功的时候更新当前路由 //activeRouter() } else { this.$message({ type: &#34;error&#34;, message: res.msg }) } }) 关于路由配置 需要避免任何用户都能通过改url的方式访问对应页面，因此考虑如果此用户没有访问该页面的权限，便不进行路由加载。采取循环的方式进行路由注册。（addRoute）
+        </div>
+          <a href="/post/chapter-6/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/post/chapter-5/" class="color-inherit dim link">
             2022年度总结
             </a>
@@ -278,31 +305,6 @@ SE Undergraduate in ECNU  ||  live as a purist</p>
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/post/chapter-1/" class="color-inherit dim link">
-            Hello World Again
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          最近看了很多学长和许多同龄人整的博客，然后心血来潮想自己搭一个玩玩。路子大致就是用了Hugo的框架，配置下github pages然后设置下vercel，再阿里云买个域名配置下DNS映射。这样网站既不用备案也能获得比较理想的访问速度。(游走在法律的边缘:D
-或许以后会在这里面写写东西捏
-        </div>
-          <a href="/post/chapter-1/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
@@ -311,8 +313,8 @@ SE Undergraduate in ECNU  ||  live as a purist</p>
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/post/chapter-6/" class="link black dim">
-              基于Vue-Springboot的论文管理系统
+            <a href="/post/chapter-1/" class="link black dim">
+              Hello World Again
             </a>
           </h2>
         
