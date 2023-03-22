@@ -6,7 +6,17 @@
     <description>Recent content in Be natural, Be yourself. on Jiaming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://Jiaaming.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://Jiaaming.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode record - March 2023</title>
+      <link>https://Jiaaming.github.io/post/chapter-7/</link>
+      <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://Jiaaming.github.io/post/chapter-7/</guid>
+      <description>Binary Search Find left bound/right bound
+public int[] searchRange(int[] nums, int target) { return new int[]{helper(nums, target, true), helper(nums, target, false)}; } public int helper(int[] nums, int target,boolean trueIfSearchLeftBound){ int l = 0; int r = nums.length-1; int res = -1; while (l&amp;lt;=r){ int midl = (l+r)/2; if (nums[midl]&amp;gt;target){ r = midl-1; }else if(nums[midl]&amp;lt;target){ l = midl+1; }else{ res = midl; if (trueIfSearchLeftBound){ r = midl-1; }else{ l = midl+1; } } } System.</description>
+    </item>
+    
     <item>
       <title>基于Vue-Springboot的论文管理系统</title>
       <link>https://Jiaaming.github.io/post/chapter-6/</link>
