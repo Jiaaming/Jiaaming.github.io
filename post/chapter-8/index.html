@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Leetcode record - June 2023 | Jiaming</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="leetcode June 2023">
+    <meta name="generator" content="Hugo 0.101.0" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Leetcode record - June 2023" />
+<meta property="og:description" content="leetcode June 2023" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Jiaaming.github.io/post/chapter-8/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-06-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-06-28T00:00:00+00:00" /><meta property="og:site_name" content="Jiaming" />
+
+<meta itemprop="name" content="Leetcode record - June 2023">
+<meta itemprop="description" content="leetcode June 2023"><meta itemprop="datePublished" content="2023-06-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-06-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="621">
+<meta itemprop="keywords" content="技术," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode record - June 2023"/>
+<meta name="twitter:description" content="leetcode June 2023"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Jiaming
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="  About me page">
+                About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Articles page">
+              Articles
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://running.jiaaming.cn" target="_blank" class="Running🏃Page ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Running🏃Page link" rel="noopener" aria-label="follow on Running🏃Page——Opens in a new window">
+      
+        Running🏃Page
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        ARTICLES
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Leetcode record - June 2023</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-06-28T00:00:00Z">June 28, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong><strong><a href="https://leetcode.cn/problems/maximum-distance-in-arrays/">624. Maximum Distance in Arrays</a></strong></strong></p>
+<p><em>You are given m arrays, where each array is sorted in ascending order.</em></p>
+<p><em>You can pick up two integers from two different arrays (each array picks one) and calculate the distance. We define the distance between two integers a and b to be their absolute difference |a - b|.</em></p>
+<p><em>Return the maximum distance.</em></p>
+<p><strong><code>Example 1:</code></strong></p>
+<p><strong><code>Input: arrays = [[1,2,3],[4,5],[1,2,3]] Output: 4 Explanation: One way to reach the maximum distance 4 is to pick 1 in the first or third array and pick 5 in the second array. Example 2:</code></strong></p>
+<p><strong><code>Input: arrays = [[1],[1]] Output: 0</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">maxDistance</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> arrays<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> minVal <span style="color:#f92672">=</span> arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">).</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> maxVal <span style="color:#f92672">=</span> arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">).</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">).</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> maxDistance <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> <span style="color:#75715e">//very important. Can&#39;t be maxVal - minVal!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        For every new array, we calculate the distance in two ways:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        Between the smallest element in this array and the maximum element seen so far in the previous arrays.  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        Between the largest element in this array and the minimum element seen so far in the previous arrays.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        */</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">();</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> array <span style="color:#f92672">=</span> arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            maxDistance <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>maxDistance<span style="color:#f92672">,</span> 
+</span></span><span style="display:flex;"><span>                                  Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>Math<span style="color:#f92672">.</span><span style="color:#a6e22e">abs</span><span style="color:#f92672">(</span>maxVal <span style="color:#f92672">-</span> array<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">)),</span> 
+</span></span><span style="display:flex;"><span>                                           Math<span style="color:#f92672">.</span><span style="color:#a6e22e">abs</span><span style="color:#f92672">(</span>array<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>array<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">-</span> minVal<span style="color:#f92672">)));</span>
+</span></span><span style="display:flex;"><span>            minVal <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>minVal<span style="color:#f92672">,</span> array<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>0<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>            maxVal <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>maxVal<span style="color:#f92672">,</span> array<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>array<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> maxDistance<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul>
+<li>Sliding Window’s key word: array, consecutive.</li>
+</ul>
+<hr>
+<p><strong><strong><a href="https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters/">159. Longest Substring with At Most Two Distinct Characters</a></strong></strong></p>
+<p><em>Given a string s, return the length of the longest substring that contains at most two distinct characters.</em></p>
+<p><strong><code>Example 1:</code></strong></p>
+<p><strong><code>Input: s = &quot;eceba&quot; Output: 3 Explanation: The substring is &quot;ece&quot; which its length is 3.</code></strong></p>
+<p><strong><code>Example 2:</code></strong></p>
+<p><strong><code>Input: s = &quot;ccaabbb&quot; Output: 5 Explanation: The substring is &quot;aabbb&quot; which its length is 5.</code></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lengthOfLongestSubstringTwoDistinct</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> r <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        HashMap <span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">,</span>Integer<span style="color:#f92672">&gt;</span> hm <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> maxlen <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>r<span style="color:#f92672">&lt;</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//put first and then handle conflict later
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            hm<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>r<span style="color:#f92672">),</span>hm<span style="color:#f92672">.</span><span style="color:#a6e22e">getOrDefault</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>r<span style="color:#f92672">),</span>0<span style="color:#f92672">)+</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//handle cpnflict
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>hm<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()&gt;=</span>3<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>hm<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>l<span style="color:#f92672">))</span> <span style="color:#f92672">==</span> 1<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                    hm<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>l<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    hm<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>l<span style="color:#f92672">),</span>hm<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>l<span style="color:#f92672">))</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                l<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>                len<span style="color:#f92672">--;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            r<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>            len<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>            maxlen <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>maxlen<span style="color:#f92672">,</span> len<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> maxlen<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+<p><strong><strong><a href="https://leetcode.cn/problems/max-consecutive-ones-ii/">487. Max Consecutive Ones II</a></strong></strong></p>
+<p><em>Given a binary array nums, return the maximum number of consecutive 1&rsquo;s in the array if you can flip at most one 0.</em></p>
+<p><code>Example 1:</code></p>
+<p><code>Input: nums = [1,0,1,1,0] Output: 4 Explanation:</code></p>
+<ul>
+<li><code>If we flip the first zero, nums becomes [1,1,1,1,0] and we have 4 consecutive ones.</code></li>
+<li><code>If we flip the second zero, nums becomes [1,0,1,1,1] and we have 3 consecutive ones. The max number of consecutive ones is 4.</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">findMaxConsecutiveOnes</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> nums<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> r <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> <span style="color:#f92672">[]</span>cnt <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>2<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> maxlens <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> lens <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>r<span style="color:#f92672">&lt;</span>nums<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            cnt<span style="color:#f92672">[</span>nums<span style="color:#f92672">[</span>r<span style="color:#f92672">]]++;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>cnt<span style="color:#f92672">[</span>0<span style="color:#f92672">]&gt;</span>1<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                cnt<span style="color:#f92672">[</span>nums<span style="color:#f92672">[</span>l<span style="color:#f92672">]]--;</span>
+</span></span><span style="display:flex;"><span>                l<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>                lens<span style="color:#f92672">--;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            r<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>            lens<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>            maxlens <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>lens<span style="color:#f92672">,</span> maxlens<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> maxlens<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><hr>
+<p><strong><strong><a href="https://leetcode.cn/problems/find-k-length-substrings-with-no-repeated-characters/">1100. Find K-Length Substrings With No Repeated Characters</a></strong></strong></p>
+<p><code>Given a string s and an integer k, return the number of substrings in s of length k with no repeated characters.</code></p>
+<p><code>Example 1:</code></p>
+<p><code>Input: s = &quot;havefunonleetcode&quot;, k = 5 Output: 6 Explanation: There are 6 substrings they are: 'havef','avefu','vefun','efuno','etcod','tcode'. Example 2:</code></p>
+<p><code>Input: s = &quot;home&quot;, k = 5 Output: 0 Explanation: Notice k can be larger than the length of s. In this case, it is not possible to find any substring.</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">numKLenSubstrNoRepeats</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> k<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()&lt;</span>k<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        HashMap<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;</span> hm <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> r <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> cnt <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>r<span style="color:#f92672">&lt;</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>            hm<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>r<span style="color:#f92672">),</span>hm<span style="color:#f92672">.</span><span style="color:#a6e22e">getOrDefault</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>r<span style="color:#f92672">),</span>0<span style="color:#f92672">)+</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>hm<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>r<span style="color:#f92672">))&gt;=</span>2<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                hm<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>l<span style="color:#f92672">),</span>hm<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>l<span style="color:#f92672">))</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                l<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            r<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>r<span style="color:#f92672">-</span>l <span style="color:#f92672">==</span> k<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                cnt<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Remember to change the Hashmap count 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>								<span style="color:#75715e">//whenever you change l or r variable.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                hm<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>l<span style="color:#f92672">),</span>hm<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>l<span style="color:#f92672">))</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                l<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cnt<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>s
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/%E6%8A%80%E6%9C%AF" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">技术</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      <head>
+    
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    
+  </head>
+  <body>
+    
+    <div id="waline"></div>
+    <script>
+      Waline.init({
+        el: '#waline',
+        serverURL: 'https://blog-comment-snowy.vercel.app',
+      });
+    </script>
+    
+  </body>
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/post/chapter-7/">Leetcode record - March 2023</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/chapter-6/">基于Vue-Springboot的论文管理系统</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://Jiaaming.github.io/" >
+    &copy;  Jiaming 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://running.jiaaming.cn" target="_blank" class="Running🏃Page ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Running🏃Page link" rel="noopener" aria-label="follow on Running🏃Page——Opens in a new window">
+      
+        Running🏃Page
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+  
+</footer>
+
+  </body>
+</html>

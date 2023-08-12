@@ -6,7 +6,54 @@
     <description>Recent content in Be natural, Be yourself. on Jiaming</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://Jiaaming.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://Jiaaming.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode record - July 2023</title>
+      <link>https://Jiaaming.github.io/post/chapter-9/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://Jiaaming.github.io/post/chapter-9/</guid>
+      <description>关于区间集合：
+这个问题的难点在于如何有效地处理会议的冲突。具体来说，需要在每个时间点追踪哪些会议正在进行，然后决定是否需要额外的会议室。下面是一些思考的建议和线索：
+排序：这是一个重要的线索。当你看到这种需要比较或者组织时间区间的问题时，排序通常是一个有用的第一步。在本问题中，按照开始时间对会议进行排序可以帮助我们逐个地处理会议，确保我们先处理开始时间早的会议。 优先队列（最小堆）：在处理一系列事件，其中每个事件都有开始和结束时间，并且可能会发生冲突的情况下，优先队列（特别是最小堆）经常会被用到。在本问题中，我们需要知道当前正在进行的所有会议中最早结束的那一个，以决定是否需要一个新的会议室。最小堆正好可以提供这个功能，因为它总是把最小的元素放在前面。 贪心思想：这是一个隐藏的线索。这个问题可以通过一种贪心的方式来解决，即总是尽可能地复用会议室。具体来说，每次当一个新的会议开始时，如果有一个会议已经结束，那么我们就可以在同一个会议室举行这个新的会议，而不需要新开一个会议室。这个策略保证了我们总是使用最少数量的会议室。 重叠区间问题：类似的问题经常出现在算法问题中，所以可以作为一个模式来识别。当你看到需要处理重叠区间的问题时，可以想到使用排序和优先队列来解决。 在碰到这类问题时，练习和经验也很重要。一开始可能不容易看出解决方案，但通过解决更多的类似问题，你将能够更容易地识别出相应的模式，并找到正确的方法来解决这类问题。
+253. Meeting Rooms II
+Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
+Example 1:
+Input: intervals = [[0,30],[5,10],[15,20]] Output: 2
+Example 2:
+Input: intervals = [[7,10],[2,4]] Output: 1
+Constraints:
+1 &amp;lt;= intervals.length &amp;lt;= 104 0 &amp;lt;= starti &amp;lt; endi &amp;lt;= 106 class Solution { public int minMeetingRooms(int[][] intervals) { Arrays.sort(intervals, (a, b)-&amp;gt;Integer.</description>
+    </item>
+    
+    <item>
+      <title>Use Swagger to show API in Django</title>
+      <link>https://Jiaaming.github.io/post/chapter-10/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://Jiaaming.github.io/post/chapter-10/</guid>
+      <description>Use Swagger to show API in Django Document: https://drf-yasg.readthedocs.io/en/stable/readme.html#usage
+A good example: https://debrajbhal.hashnode.dev/adding-custom-documentation-to-apis-in-django-rest-framework-using-drf-yasg
+Add Post parameters: https://stackoverflow.com/questions/50929098/django-rest-framework-how-to-add-post-parameters-to-api-documentdrf-yasg
+Hard code response parameters: https://stackoverflow.com/questions/62914407/drf-yasg-how-to-hide-django-rest-framework-schema
+#import from drf_yasg.utils import swagger_auto_schema from drf_yasg import openapi from rest_framework.decorators import api_view For GET method:
+#CBV version class TsView: @staticmethod @api_view([&amp;#39;GET&amp;#39;]) #it depend. Add it when you choose to write CBV @swagger_auto_schema( operation_description=&amp;#34;get ts info based on ts number&amp;#34;, responses={ 200: openapi.Response(&amp;#34;request success&amp;#34;, schema=openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Schema(type=openapi.TYPE_OBJECT))), 400: &amp;#34;request failed&amp;#34;, }, ) def get_ts_info(request, ts_num): &amp;#34;&amp;#34;&amp;#34; Retrieve the detailed information of a specific ts by its number.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode record - June 2023</title>
+      <link>https://Jiaaming.github.io/post/chapter-8/</link>
+      <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://Jiaaming.github.io/post/chapter-8/</guid>
+      <description>624. Maximum Distance in Arrays
+You are given m arrays, where each array is sorted in ascending order.
+You can pick up two integers from two different arrays (each array picks one) and calculate the distance. We define the distance between two integers a and b to be their absolute difference |a - b|.
+Return the maximum distance.
+Example 1:
+Input: arrays = [[1,2,3],[4,5],[1,2,3]] Output: 4 Explanation: One way to reach the maximum distance 4 is to pick 1 in the first or third array and pick 5 in the second array.</description>
+    </item>
+    
     <item>
       <title>Leetcode record - March 2023</title>
       <link>https://Jiaaming.github.io/post/chapter-7/</link>
@@ -114,7 +161,7 @@ request.post(&amp;#34;/api/login&amp;#34;, this.form).then(res =&amp;gt; { conso
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://Jiaaming.github.io/about/</guid>
-      <description>2008.9 - 2020.6 @JSYY in Beijing, China 2020.8 - 2024.6 @ECNU in Shanghai, China a software developer, film phtotgrapher, magician</description>
+      <description>2008.9 - 2020.6 @JSYY in Beijing, China 2022.8 - 2023.5 @UCB in California, US 2020.8 - 2024.6 @ECNU in Shanghai, China a software developer, film phtotgrapher, magician</description>
     </item>
     
     <item>
@@ -123,8 +170,8 @@ request.post(&amp;#34;/api/login&amp;#34;, this.form).then(res =&amp;gt; { conso
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://Jiaaming.github.io/contact/</guid>
-      <description>Email: &amp;ldquo;jiaming_liu2002@163.com.&amp;rdquo; You can also checkout my
-Github for my repository Weibo for my photos
+      <description>Email: &amp;ldquo;jiaming20020607@gmail.com.&amp;rdquo; You can also checkout my
+Linkedin for my career Github for my repository Weibo for my photos
 Bilibili Chanel for my videos
 Your Name Email Address An email address is required. Message </description>
     </item>

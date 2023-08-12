@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Leetcode record - July 2023 | Jiaming</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="leetcode July 2023">
+    <meta name="generator" content="Hugo 0.101.0" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Leetcode record - July 2023" />
+<meta property="og:description" content="leetcode July 2023" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Jiaaming.github.io/post/chapter-9/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-07-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-07-29T00:00:00+00:00" /><meta property="og:site_name" content="Jiaming" />
+
+<meta itemprop="name" content="Leetcode record - July 2023">
+<meta itemprop="description" content="leetcode July 2023"><meta itemprop="datePublished" content="2023-07-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-07-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="940">
+<meta itemprop="keywords" content="技术," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode record - July 2023"/>
+<meta name="twitter:description" content="leetcode July 2023"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Jiaming
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="  About me page">
+                About me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Articles page">
+              Articles
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://running.jiaaming.cn" target="_blank" class="Running🏃Page ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Running🏃Page link" rel="noopener" aria-label="follow on Running🏃Page——Opens in a new window">
+      
+        Running🏃Page
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        ARTICLES
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Leetcode record - July 2023</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-07-29T00:00:00Z">July 29, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>关于区间集合：</p>
+<p>这个问题的难点在于如何有效地处理会议的冲突。具体来说，需要在每个时间点追踪哪些会议正在进行，然后决定是否需要额外的会议室。下面是一些思考的建议和线索：</p>
+<ol>
+<li><strong>排序</strong>：这是一个重要的线索。当你看到这种需要比较或者组织时间区间的问题时，排序通常是一个有用的第一步。在本问题中，按照开始时间对会议进行排序可以帮助我们逐个地处理会议，确保我们先处理开始时间早的会议。</li>
+<li><strong>优先队列（最小堆）</strong>：在处理一系列事件，其中每个事件都有开始和结束时间，并且可能会发生冲突的情况下，优先队列（特别是最小堆）经常会被用到。在本问题中，我们需要知道当前正在进行的所有会议中最早结束的那一个，以决定是否需要一个新的会议室。最小堆正好可以提供这个功能，因为它总是把最小的元素放在前面。</li>
+<li><strong>贪心思想</strong>：这是一个隐藏的线索。这个问题可以通过一种贪心的方式来解决，即总是尽可能地复用会议室。具体来说，每次当一个新的会议开始时，如果有一个会议已经结束，那么我们就可以在同一个会议室举行这个新的会议，而不需要新开一个会议室。这个策略保证了我们总是使用最少数量的会议室。</li>
+<li><strong>重叠区间问题</strong>：类似的问题经常出现在算法问题中，所以可以作为一个模式来识别。当你看到需要处理重叠区间的问题时，可以想到使用排序和优先队列来解决。</li>
+</ol>
+<p>在碰到这类问题时，练习和经验也很重要。一开始可能不容易看出解决方案，但通过解决更多的类似问题，你将能够更容易地识别出相应的模式，并找到正确的方法来解决这类问题。</p>
+<p><strong><strong><a href="https://leetcode.cn/problems/meeting-rooms-ii/">253. Meeting Rooms II</a></strong></strong></p>
+<p><strong>Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.</strong></p>
+<p><code>Example 1:</code></p>
+<p><code>Input: intervals = [[0,30],[5,10],[15,20]] Output: 2</code></p>
+<p><code>Example 2:</code></p>
+<p><code>Input: intervals = [[7,10],[2,4]] Output: 1</code></p>
+<p><code>Constraints:</code></p>
+<ul>
+<li><code>1 &lt;= intervals.length &lt;= 104</code></li>
+<li><code>0 &lt;= starti &lt; endi &lt;= 106</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minMeetingRooms</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> intervals<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">sort</span><span style="color:#f92672">(</span>intervals<span style="color:#f92672">,</span> <span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">)-&gt;</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">compare</span><span style="color:#f92672">(</span>a<span style="color:#f92672">[</span>0<span style="color:#f92672">],</span> b<span style="color:#f92672">[</span>0<span style="color:#f92672">]));</span>
+</span></span><span style="display:flex;"><span>        PriorityQueue<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> heap <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PriorityQueue<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        heap<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>intervals<span style="color:#f92672">[</span>0<span style="color:#f92672">][</span>1<span style="color:#f92672">]);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> res <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>intervals<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>i<span style="color:#f92672">++){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>0<span style="color:#f92672">]&gt;=</span>heap<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>                heap<span style="color:#f92672">.</span><span style="color:#a6e22e">poll</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                res<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            heap<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>1<span style="color:#f92672">]);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>这段代码的主要结构和组成：</p>
+<ol>
+<li>首先，代码按照每个会议的开始时间进行排序。这样，我们可以依次处理每个会议，并确保我们在处理任何一个会议之前已经处理完了所有开始时间更早的会议。</li>
+<li>然后，代码创建了一个最小堆（<code>PriorityQueue</code>），用来跟踪所有当前正在进行的会议的结束时间。这样，我们可以快速找到最早结束的会议。</li>
+</ol>
+<p>接下来，我会详细解释这段代码的每一步：</p>
+<ol>
+<li><code>heap.add(intervals[0][1]);</code> 这行代码把第一个会议的结束时间添加到了堆中。因为这是第一个会议，所以我们一定需要一个会议室来举行这个会议。</li>
+<li>然后，代码进入了一个循环，依次处理每一个会议。对于每一个会议，它首先检查这个会议的开始时间是否晚于当前最早结束的会议的结束时间（<code>if(intervals[i][0] &gt;= heap.peek()){...}</code>）。如果是的话，那么我们可以在同一个会议室举行这个新的会议，因此我们从堆中移除最早结束的会议的结束时间（<code>heap.poll();</code>），并把新的会议的结束时间添加到堆中（<code>heap.add(intervals[i][1]);</code>）。如果不是的话，那么我们需要一个新的会议室来举行这个会议，因此我们直接把新的会议的结束时间添加到堆中（<code>heap.add(intervals[i][1]);</code>）。</li>
+<li>最后，当所有的会议都被处理完之后，堆中剩下的元素数量就是我们需要的会议室的数量。因为对于堆中的每一个元素，都存在一个正在进行的会议或者将要进行的会议，而且这些会议的时间都是有冲突的，所以我们需要为堆中的每一个元素提供一个会议室。因此，我们返回了堆的大小（<code>return heap.size();</code>），作为最小需要的会议室的数量。</li>
+</ol>
+<hr>
+<p><strong><strong><a href="https://leetcode.cn/problems/add-bold-tag-in-string/">616. Add Bold Tag in String</a></strong></strong></p>
+<p><strong>You are given a string s and an array of strings words.</strong></p>
+<p><strong>You should add a closed pair of bold tag <!-- raw HTML omitted --> and <!-- raw HTML omitted --> to wrap the substrings in s that exist in words.</strong></p>
+<p><strong>If two such substrings overlap, you should wrap them together with only one pair of closed bold-tag.
+If two substrings wrapped by bold tags are consecutive, you should combine them.
+Return s after adding the bold tags.</strong></p>
+<p><code>Example 1:</code></p>
+<p><code>Input: s = &quot;abcxyz123&quot;, words = [&quot;abc&quot;,&quot;123&quot;] Output: &quot;&lt;b&gt;abc&lt;/b&gt;xyz&lt;b&gt;123&lt;/b&gt;&quot;</code></p>
+<p><code>Input: s = &quot;aaabbb&quot;, words = [&quot;aa&quot;,&quot;b&quot;] Output: &quot;&lt;b&gt;aaabbb&lt;/b&gt;&quot;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">addBoldTag</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">,</span> String<span style="color:#f92672">[]</span> words<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">boolean</span><span style="color:#f92672">[]</span> bold <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">boolean</span><span style="color:#f92672">[</span>n <span style="color:#f92672">+</span> 2<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>String word <span style="color:#f92672">:</span> words<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            i <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span>word<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>i<span style="color:#f92672">!=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>j<span style="color:#f92672">&lt;</span>i<span style="color:#f92672">+</span>word<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>j<span style="color:#f92672">++){</span>
+</span></span><span style="display:flex;"><span>                    bold<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                i <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">indexOf</span><span style="color:#f92672">(</span>word<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        StringBuilder ans <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> cur <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> n<span style="color:#f92672">;</span> <span style="color:#f92672">++</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>bold<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">==</span> 0 <span style="color:#f92672">||</span> <span style="color:#f92672">!</span>bold<span style="color:#f92672">[</span>i <span style="color:#f92672">-</span> 1<span style="color:#f92672">]))</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                ans<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;b&gt;&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            ans<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">));</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>bold<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>bold<span style="color:#f92672">[</span>i <span style="color:#f92672">+</span> 1<span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                ans<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;/b&gt;&#34;</span><span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ans<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>不同与上一题的处理思路，这里设置了一个bold数组来记录每一位的状态（因为数据为String，遍历次数少，如果上一题的话时间复杂度达到了N^2，可能会超时）。区间集合问题有时需要关注两端（头和尾），有时可以采取像这样区间合并的方法。</p>
+<p><strong><strong><a href="https://leetcode.cn/problems/remove-interval/">1272. Remove Interval</a></strong></strong></p>
+<p><strong>A set of real numbers can be represented as the union of several disjoint intervals, where each interval is in the form [a, b). A real number x is in the set if one of its intervals [a, b) contains x (i.e. a &lt;= x &lt; b).</strong></p>
+<p><strong>You are given a sorted list of disjoint intervals intervals representing a set of real numbers as described above, where intervals[i] = [ai, bi] represents the interval [ai, bi). You are also given another interval toBeRemoved.</strong></p>
+<p><strong>Return the set of real numbers with the interval toBeRemoved removed from intervals. In other words, return the set of real numbers such that every x in the set is in intervals but not in toBeRemoved. Your answer should be a sorted list of disjoint intervals as described above.</strong></p>
+<p>Input: intervals = [[0,2],[3,4],[5,7]], toBeRemoved = [1,6]
+Output: [[0,1],[6,7]]</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">//分类讨论
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//intervals[i][j] &gt;= toBeRemoved[0] &amp;&amp; intervals[i][j] &lt;= toBeRemoved[1]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> <span style="color:#a6e22e">removeInterval</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> intervals<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> toBeRemoved<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;&gt;</span> res <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>intervals<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>i<span style="color:#f92672">++){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;</span> toBeRemoved<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">||</span> intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">&gt;</span> toBeRemoved<span style="color:#f92672">[</span>1<span style="color:#f92672">]){</span>
+</span></span><span style="display:flex;"><span>                res<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;(</span>Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>0<span style="color:#f92672">],</span> intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>1<span style="color:#f92672">])));</span> 
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// From toBeRemoved&#39;s point of view!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">&lt;</span> toBeRemoved<span style="color:#f92672">[</span>0<span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    res<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>0<span style="color:#f92672">],</span> toBeRemoved<span style="color:#f92672">[</span>0<span style="color:#f92672">]));</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">&gt;</span> toBeRemoved<span style="color:#f92672">[</span>1<span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    res<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>toBeRemoved<span style="color:#f92672">[</span>1<span style="color:#f92672">],</span> intervals<span style="color:#f92672">[</span>i<span style="color:#f92672">][</span>1<span style="color:#f92672">]));</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> res<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="关于栈">关于栈</h3>
+<p>遇到问题时的关键词：反转</p>
+<p><strong><strong><a href="https://leetcode.cn/problems/ternary-expression-parser/">439. Ternary Expression Parser</a></strong></strong></p>
+<blockquote>
+<p>Input: expression = &ldquo;F?1:T?4:5&rdquo;
+Output: &ldquo;4&rdquo;
+Explanation: The conditional expressions group right-to-left. Using parenthesis, it is read/evaluated as:
+&ldquo;(F ? 1 : (T ? 4 : 5))&rdquo; &ndash;&gt; &ldquo;(F ? 1 : 4)&rdquo; &ndash;&gt; &ldquo;4&rdquo;
+or &ldquo;(F ? 1 : (T ? 4 : 5))&rdquo; &ndash;&gt; &ldquo;(T ? 4 : 5)&rdquo; &ndash;&gt; &ldquo;4&rdquo;</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">parseTernary</span><span style="color:#f92672">(</span>String expression<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>expression <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> expression<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        Stack<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">&gt;</span> stack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> expression<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">;</span> i<span style="color:#f92672">--)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> expression<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(!</span>stack<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()</span> <span style="color:#f92672">&amp;&amp;</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;?&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Pop &#39;?&#39; symbol
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">char</span> first <span style="color:#f92672">=</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Pop &#39;:&#39; symbol
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">char</span> second <span style="color:#f92672">=</span> stack<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">//for every ternary expression, only left one value. So in 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">// the enad, there is only one value.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>c <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;T&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>first<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>c <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;F&#39;</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>second<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                stack<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>c<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>stack<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">());</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>三元表达式从右向左扫描更简单和方便</p>
+<p>**<strong><a href="https://leetcode.cn/problems/find-permutation/">484. Find Permutation</a></strong></p>
+<blockquote>
+<p>Input: s = &ldquo;DI&rdquo;
+Output: [2,1,3]
+Explanation: Both [2,1,3] and [3,1,2] can be represented as &ldquo;DI&rdquo;, but since we want to find the smallest lexicographical permutation, you should return [2,1,3]</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> <span style="color:#a6e22e">findPermutation</span><span style="color:#f92672">(</span>String s<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> lens <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>        Stack<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> st <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> <span style="color:#f92672">[]</span>ret <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()+</span>1<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> lens<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            st<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>i<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;I&#39;</span><span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">while</span><span style="color:#f92672">(!</span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>                    ret<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                    index<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>lens<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span><span style="color:#f92672">(!</span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>            ret<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            index<span style="color:#f92672">++;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ret<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>理解这个问题的关键在于理解题目中的 &ldquo;lexicographically smallest&rdquo; 和 &ldquo;I&rdquo;、&ldquo;D&rdquo; 这两个条件的含义，并根据这些条件来进行思考。</p>
+<ul>
+<li>&ldquo;Lexicographically smallest&rdquo;：这意味着你希望在可能的所有满足条件的数组中，你希望数字尽可能的靠前，尤其是在比较高位的数字。</li>
+<li>&ldquo;I&rdquo; 和 &ldquo;D&rdquo;：这两个条件给你提供了数组中相邻元素之间的关系。&ldquo;I&rdquo; 表示下一个数字比当前数字大，&ldquo;D&rdquo; 表示下一个数字比当前数字小。</li>
+</ul>
+<p>将这两个条件结合，你可以得到这样的想法：在满足 &ldquo;I&rdquo; 和 &ldquo;D&rdquo; 条件的同时，尽可能地让数组的每一位都尽可能小，那么最直观的想法就是在满足条件的情况下，尽可能使用较小的数字。于是，一个自然的想法是，每次遇到 &ldquo;I&rdquo; 时，就尽可能地使用小的数字，而每次遇到 &ldquo;D&rdquo; 时，由于要比前一个数字小，所以可能需要使用较大的数字，但我们希望它尽可能小，所以会尽量延后选择，直到遇到 &ldquo;I&rdquo; 或者字符串结束时，再进行选择。</p>
+<p>再深一步，我们会注意到，字符串中的 &ldquo;D&rdquo; 总是连续出现的，而且 &ldquo;I&rdquo; 和 &ldquo;D&rdquo; 是交替出现的。这时，我们可以联想到 &ldquo;反转&rdquo; 这个操作，也就是说，每次遇到一段连续的 &ldquo;D&rdquo;，我们可以先顺序选择数字，然后在最后进行反转，这样就可以满足 &ldquo;D&rdquo; 的条件，同时又保证了字典序最小。</p>
+<p><strong><strong><a href="https://leetcode.cn/problems/parallel-courses-iii/">2050. Parallel Courses III</a></strong></strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minimumTime</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[][]</span> relations<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> time<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;[]</span> g <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">[</span>n<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">setAll</span><span style="color:#f92672">(</span>g<span style="color:#f92672">,</span> k <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> in <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>n<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> e <span style="color:#f92672">:</span> relations<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> pre <span style="color:#f92672">=</span> e<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">,</span> then <span style="color:#f92672">=</span> e<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>            g<span style="color:#f92672">[</span>pre<span style="color:#f92672">].</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>then<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">++</span>in<span style="color:#f92672">[</span>then<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 0: 1     1: 1       2: 2     3: 1     4:0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//入度 = 0：此课无任何先修课程要求
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Queue <span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> q <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayDeque<span style="color:#f92672">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> f <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>n<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>n<span style="color:#f92672">;</span>i<span style="color:#f92672">++){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>in<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span>0<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                q<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                f<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> time<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+</span></span><span style="display:flex;"><span>                ans <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>ans<span style="color:#f92672">,</span> time<span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span> <span style="color:#75715e">//处理edge case
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span><span style="color:#f92672">(!</span>q<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()){</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> tmp <span style="color:#f92672">=</span> q<span style="color:#f92672">.</span><span style="color:#a6e22e">poll</span><span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j<span style="color:#f92672">:</span> g<span style="color:#f92672">[</span>tmp<span style="color:#f92672">]){</span>
+</span></span><span style="display:flex;"><span>                in<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">--;</span>
+</span></span><span style="display:flex;"><span>                f<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>f<span style="color:#f92672">[</span>j<span style="color:#f92672">],</span>f<span style="color:#f92672">[</span>tmp<span style="color:#f92672">]+</span>time<span style="color:#f92672">[</span>j<span style="color:#f92672">]);</span>
+</span></span><span style="display:flex;"><span>                ans <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>ans<span style="color:#f92672">,</span> f<span style="color:#f92672">[</span>j<span style="color:#f92672">]);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>in<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> 0<span style="color:#f92672">){</span>
+</span></span><span style="display:flex;"><span>                    q<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>j<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> ans<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">};</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//51243
+</span></span></span></code></pre></div><p>难点主要在于将拓扑排序和动态规划结合。</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/%E6%8A%80%E6%9C%AF" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">技术</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      <head>
+    
+    <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+    />
+    
+  </head>
+  <body>
+    
+    <div id="waline"></div>
+    <script>
+      Waline.init({
+        el: '#waline',
+        serverURL: 'https://blog-comment-snowy.vercel.app',
+      });
+    </script>
+    
+  </body>
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/post/chapter-10/">Use Swagger to show API in Django</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/chapter-8/">Leetcode record - June 2023</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/chapter-7/">Leetcode record - March 2023</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/post/chapter-6/">基于Vue-Springboot的论文管理系统</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://Jiaaming.github.io/" >
+    &copy;  Jiaming 2023 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://running.jiaaming.cn" target="_blank" class="Running🏃Page ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Running🏃Page link" rel="noopener" aria-label="follow on Running🏃Page——Opens in a new window">
+      
+        Running🏃Page
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+</div>
+  </div>
+  
+</footer>
+
+  </body>
+</html>
