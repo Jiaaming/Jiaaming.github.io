@@ -2,101 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Jiaaming.github.io/</loc>
+    <loc>https://examplesite.com/en/</loc>
     <lastmod>2023-07-29T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-9/</loc>
+    <loc>https://examplesite.com/</loc>
     <lastmod>2023-07-29T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/tags/</loc>
+    <loc>https://examplesite.com/en/post/chapter-9/</loc>
     <lastmod>2023-07-29T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-10/</loc>
+    <loc>https://examplesite.com/tags/</loc>
     <lastmod>2023-07-29T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <loc>https://examplesite.com/en/post/chapter-10/</loc>
     <lastmod>2023-07-29T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-8/</loc>
+    <loc>https://examplesite.com/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2023-07-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://examplesite.com/en/post/chapter-8/</loc>
     <lastmod>2023-06-28T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-7/</loc>
+    <loc>https://examplesite.com/en/post/chapter-7/</loc>
     <lastmod>2023-03-21T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-6/</loc>
+    <loc>https://examplesite.com/en/post/chapter-6/</loc>
     <lastmod>2023-02-26T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-5/</loc>
+    <loc>https://examplesite.com/en/post/chapter-5/</loc>
     <lastmod>2022-12-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
+    <loc>https://examplesite.com/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2022-12-31T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-4/</loc>
+    <loc>https://examplesite.com/en/post/chapter-4/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://examplesite.com/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/tags/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/</loc>
+    <loc>https://examplesite.com/tags/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/</loc>
     <lastmod>2022-07-22T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-3/</loc>
+    <loc>https://examplesite.com/en/post/chapter-3/</loc>
     <lastmod>2022-07-22T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-2/</loc>
+    <loc>https://examplesite.com/en/post/chapter-2/</loc>
     <lastmod>2022-07-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/chapter-1/</loc>
+    <loc>https://examplesite.com/en/post/chapter-1/</loc>
     <lastmod>2022-07-09T10:58:08-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/post/</loc>
+    <loc>https://examplesite.com/en/post/</loc>
     <lastmod>2022-03-02T12:00:00-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url><url>
-    <loc>https://Jiaaming.github.io/about/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://examplesite.com/en/about/</loc>
   </url><url>
-    <loc>https://Jiaaming.github.io/categories/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://examplesite.com/categories/</loc>
   </url><url>
-    <loc>https://Jiaaming.github.io/contact/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://examplesite.com/en/contact/</loc>
   </url>
 </urlset>
