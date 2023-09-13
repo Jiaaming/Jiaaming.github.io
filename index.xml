@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Jiaming&#39;s Blog</title>
-    <link>https://examplesite.com/</link>
+    <link>https://jiaaming.cn/</link>
     <description>Recent content on Jiaming&#39;s Blog</description>
     <image>
       <title>Jiaming&#39;s Blog</title>
-      <url>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://jiaaming.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://jiaaming.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://examplesite.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jiaaming.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leetcode record - July 2023</title>
-      <link>https://examplesite.com/en/post/chapter-9/</link>
+      <link>https://jiaaming.cn/en/post/chapter-9/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-9/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-9/</guid>
       <description>关于区间集合：
 这个问题的难点在于如何有效地处理会议的冲突。具体来说，需要在每个时间点追踪哪些会议正在进行，然后决定是否需要额外的会议室。下面是一些思考的建议和线索：
 排序：这是一个重要的线索。当你看到这种需要比较或者组织时间区间的问题时，排序通常是一个有用的第一步。在本问题中，按照开始时间对会议进行排序可以帮助我们逐个地处理会议，确保我们先处理开始时间早的会议。 优先队列（最小堆）：在处理一系列事件，其中每个事件都有开始和结束时间，并且可能会发生冲突的情况下，优先队列（特别是最小堆）经常会被用到。在本问题中，我们需要知道当前正在进行的所有会议中最早结束的那一个，以决定是否需要一个新的会议室。最小堆正好可以提供这个功能，因为它总是把最小的元素放在前面。 贪心思想：这是一个隐藏的线索。这个问题可以通过一种贪心的方式来解决，即总是尽可能地复用会议室。具体来说，每次当一个新的会议开始时，如果有一个会议已经结束，那么我们就可以在同一个会议室举行这个新的会议，而不需要新开一个会议室。这个策略保证了我们总是使用最少数量的会议室。 重叠区间问题：类似的问题经常出现在算法问题中，所以可以作为一个模式来识别。当你看到需要处理重叠区间的问题时，可以想到使用排序和优先队列来解决。 在碰到这类问题时，练习和经验也很重要。一开始可能不容易看出解决方案，但通过解决更多的类似问题，你将能够更容易地识别出相应的模式，并找到正确的方法来解决这类问题。
@@ -32,10 +32,10 @@ Constraints:
     
     <item>
       <title>Use Swagger to show API in Django</title>
-      <link>https://examplesite.com/en/post/chapter-10/</link>
+      <link>https://jiaaming.cn/en/post/chapter-10/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-10/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-10/</guid>
       <description>Use Swagger to show API in Django Document: https://drf-yasg.readthedocs.io/en/stable/readme.html#usage
 A good example: https://debrajbhal.hashnode.dev/adding-custom-documentation-to-apis-in-django-rest-framework-using-drf-yasg
 Add Post parameters: https://stackoverflow.com/questions/50929098/django-rest-framework-how-to-add-post-parameters-to-api-documentdrf-yasg
@@ -46,10 +46,10 @@ Hard code response parameters: https://stackoverflow.com/questions/62914407/drf-
     
     <item>
       <title>Leetcode record - June 2023</title>
-      <link>https://examplesite.com/en/post/chapter-8/</link>
+      <link>https://jiaaming.cn/en/post/chapter-8/</link>
       <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-8/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-8/</guid>
       <description>624. Maximum Distance in Arrays
 You are given m arrays, where each array is sorted in ascending order.
 You can pick up two integers from two different arrays (each array picks one) and calculate the distance. We define the distance between two integers a and b to be their absolute difference |a - b|.
@@ -60,20 +60,20 @@ Input: arrays = [[1,2,3],[4,5],[1,2,3]] Output: 4 Explanation: One way to reach 
     
     <item>
       <title>Leetcode record - March 2023</title>
-      <link>https://examplesite.com/en/post/chapter-7/</link>
+      <link>https://jiaaming.cn/en/post/chapter-7/</link>
       <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-7/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-7/</guid>
       <description>Binary Search Find left bound/right bound
 public int[] searchRange(int[] nums, int target) { return new int[]{helper(nums, target, true), helper(nums, target, false)}; } public int helper(int[] nums, int target,boolean trueIfSearchLeftBound){ int l = 0; int r = nums.length-1; int res = -1; while (l&amp;lt;=r){ int midl = (l+r)/2; if (nums[midl]&amp;gt;target){ r = midl-1; }else if(nums[midl]&amp;lt;target){ l = midl+1; }else{ res = midl; if (trueIfSearchLeftBound){ r = midl-1; }else{ l = midl+1; } } } System.</description>
     </item>
     
     <item>
       <title>基于Vue-Springboot的论文管理系统</title>
-      <link>https://examplesite.com/en/post/chapter-6/</link>
+      <link>https://jiaaming.cn/en/post/chapter-6/</link>
       <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-6/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-6/</guid>
       <description>演示地址：ECNU-2022Spring-DatabaseTermProject第四组_哔哩哔哩_bilibili
 关于登录信息、权限显示 这里利用sessionStorage将用户的信息跟权限（理论上应该一起作为user信息返回的，这里分开存储。后续页面左侧Aside的访问也可以根据存储的sessionStorage解决。
 *sessionStorage 属性允许你访问一个 session Storage 对象。它与 localStorage 相似，不同之处在于 localStorage 里面存储的数据没有过期时间设置，而存储在 sessionStorage 里面的数据在页面会话结束时会被清除。页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。**在新标签或窗口打开一个页面时会在顶级浏览上下文中初始化一个新的会话，*这点和 session cookies 的运行方式不同。
@@ -82,65 +82,65 @@ request.post(&amp;#34;/api/login&amp;#34;, this.form).then(res =&amp;gt; { conso
     
     <item>
       <title>2022年度总结</title>
-      <link>https://examplesite.com/en/post/chapter-5/</link>
+      <link>https://jiaaming.cn/en/post/chapter-5/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-5/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-5/</guid>
       <description>随便写写</description>
     </item>
     
     <item>
       <title>[转载]关于时间复杂度与P、NP问题</title>
-      <link>https://examplesite.com/en/post/chapter-4/</link>
+      <link>https://jiaaming.cn/en/post/chapter-4/</link>
       <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-4/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-4/</guid>
       <description>存档</description>
     </item>
     
     <item>
       <title>聊至深夜的一些感想</title>
-      <link>https://examplesite.com/en/post/chapter-3/</link>
+      <link>https://jiaaming.cn/en/post/chapter-3/</link>
       <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-3/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-3/</guid>
       <description>我在很长一段时间里一直以为大部分人的童年学习都是在恐惧中度过的。直到最近跟好几个哥们儿聊了下发现好像不完全是这样…</description>
     </item>
     
     <item>
       <title>记录一下搭建中用到的有趣开源库&amp;组件</title>
-      <link>https://examplesite.com/en/post/chapter-2/</link>
+      <link>https://jiaaming.cn/en/post/chapter-2/</link>
       <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-2/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-2/</guid>
       <description>hh</description>
     </item>
     
     <item>
       <title>Hello World Again</title>
-      <link>https://examplesite.com/en/post/chapter-1/</link>
+      <link>https://jiaaming.cn/en/post/chapter-1/</link>
       <pubDate>Sat, 09 Jul 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://examplesite.com/en/post/chapter-1/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-1/</guid>
       <description>最近看了很多学长和许多同龄人整的博客，然后心血来潮想自己搭一个玩玩。路子大致就是用了Hugo的框架，配置下github pages然后设置下vercel，再阿里云买个域名配置下DNS映射。这样网站既不用备案也能获得比较理想的访问速度。
 或许以后会在这里面写写东西捏</description>
     </item>
     
     <item>
       <title>  About me</title>
-      <link>https://examplesite.com/en/about/</link>
+      <link>https://jiaaming.cn/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/about/</guid>
+      <guid>https://jiaaming.cn/en/about/</guid>
       <description>Jiaming  |  2002 🇨🇳</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>https://examplesite.com/en/contact/</link>
+      <link>https://jiaaming.cn/en/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://examplesite.com/en/contact/</guid>
+      <guid>https://jiaaming.cn/en/contact/</guid>
       <description>I&amp;#39;d love to hear from you</description>
     </item>
     
