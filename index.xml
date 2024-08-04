@@ -10,7 +10,16 @@
       <link>https://jiaaming.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 22 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jiaaming.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jiaaming.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Intern Summary: Merging Servers in the VSCode Gradle Extension</title>
+      <link>https://jiaaming.cn/en/post/ms-intern-summary/</link>
+      <pubDate>Sat, 03 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiaaming.cn/en/post/ms-intern-summary/</guid>
+      <description>Project Background Why Merge? Communication Between Servers Architecture Before the Merge How to Merge Architecture After the Merge Step 1: Merging Task Server and Build Server Challenges: Connection Workflow Step 2: Merging the Language Server Performance After Merge How Was Performance Measured? Pre-Merge Memory Monitoring Post-Merge Memory Monitoring Performance Results Small Medium Large Super Large Project Background During my internship at Microsoft, I worked on the VSCode Gradle Extension. This extension was initially divided into three components:</description>
+    </item>
+    
     <item>
       <title>How to Build a Simple AI Conversational Assistant Based on Langchain.js</title>
       <link>https://jiaaming.cn/en/post/chapter-11/</link>
@@ -153,7 +162,7 @@ request.post(&amp;#34;/api/login&amp;#34;, this.form).then(res =&amp;gt; { conso
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jiaaming.cn/en/about/</guid>
-      <description>Jiaming  |  2002 </description>
+      <description>a software developer, film phtotgrapher, magician</description>
     </item>
     
     <item>
