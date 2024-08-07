@@ -17,7 +17,7 @@
       <pubDate>Sat, 03 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://jiaaming.cn/en/post/ms-intern-summary/</guid>
-      <description>Project Background Why Merge? Communication Between Servers Architecture Before the Merge How to Merge Architecture After the Merge Step 1: Merging Task Server and Build Server Challenges: Connection Workflow Step 2: Merging the Language Server Performance After Merge How Was Performance Measured? Pre-Merge Memory Monitoring Post-Merge Memory Monitoring Performance Results Small Medium Large Super Large Project Background During my internship at Microsoft, I worked on the VSCode Gradle Extension. This extension was initially divided into three components:</description>
+      <description>Project Background Communication Between Servers Architecture Before the Merge Why Merge? How to Merge Architecture After the Merge Step 1: Merging Task Server and Build Server Challenges Connection Workflow Step 2: Merging Language Server to Gradle Server Performance After Merge How Was Performance Measured? Pre-Merge Memory Monitoring Post-Merge Memory Monitoring Performance Results Small Medium Large Super Large Project Background During my internship at Microsoft, I worked on the VSCode Gradle Extension.</description>
     </item>
     
     <item>
