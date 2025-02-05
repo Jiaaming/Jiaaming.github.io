@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>算法 on Jiaming&#39;s Blog</title>
-    <link>http://localhost:1313/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://jiaaming.cn/tags/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on Jiaming&#39;s Blog</description>
     <image>
       <title>Jiaming&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://jiaaming.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://jiaaming.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
     <lastBuildDate>Sat, 13 Aug 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jiaaming.cn/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[转载]关于时间复杂度与P、NP问题</title>
-      <link>http://localhost:1313/en/post/chapter-4/</link>
+      <link>https://jiaaming.cn/en/post/chapter-4/</link>
       <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-4/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-4/</guid>
       <description>存档</description>
     </item>
   </channel>

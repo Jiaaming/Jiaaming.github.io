@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Jiaming&#39;s Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://jiaaming.cn/</link>
     <description>Recent content on Jiaming&#39;s Blog</description>
     <image>
       <title>Jiaming&#39;s Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://jiaaming.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://jiaaming.cn/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.143.1</generator>
     <language>en</language>
     <lastBuildDate>Sun, 29 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jiaaming.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>·2024· Year-End Review</title>
-      <link>http://localhost:1313/en/post/2024-summary-en/</link>
+      <link>https://jiaaming.cn/en/post/2024-summary-en/</link>
       <pubDate>Sun, 29 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/2024-summary-en/</guid>
+      <guid>https://jiaaming.cn/en/post/2024-summary-en/</guid>
       <description>&lt;p&gt;People often say they want to go back to the past because they&amp;rsquo;re not happy with the present—but honestly, I&amp;rsquo;ve never really wanted to go back.&lt;/p&gt;
 &lt;p&gt;But there will probably be many, many moments in the future when &lt;strong&gt;I&amp;rsquo;ll really, really want to go back to 2024&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;winter-in-edmonton&#34;&gt;Winter: In Edmonton&lt;/h2&gt;
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>Microsoft Intern Summary: Merging Servers in the VSCode Gradle Extension</title>
-      <link>http://localhost:1313/en/post/ms-intern-summary/</link>
+      <link>https://jiaaming.cn/en/post/ms-intern-summary/</link>
       <pubDate>Sat, 03 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/ms-intern-summary/</guid>
+      <guid>https://jiaaming.cn/en/post/ms-intern-summary/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#project-background&#34;&gt;Project Background&lt;/a&gt;
 &lt;ul&gt;
@@ -73,12 +73,12 @@
     </item>
     <item>
       <title>How to Build a Simple AI Conversational Assistant Based on Langchain.js</title>
-      <link>http://localhost:1313/en/post/chapter-11/</link>
+      <link>https://jiaaming.cn/en/post/chapter-11/</link>
       <pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-11/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-11/</guid>
       <description>&lt;p&gt;本科的最后一门专业课：软件开发实践，要开发一个虚拟宠物医院学习系统，需要实现一个AI对话助手，具体的需求比较模糊。考虑到其他部分都是很低级的增删改查，因此一开始的想法就是能否将增删改查与AI对话相结合，提问的话问数据库中上传的药品/病例信息。&lt;/p&gt;
 &lt;p&gt;具体架构还是采取了RAG架构，本着一切从简的原则采取了Langchain.js纯前端实现，用OpenAI提供的api接口和Pinecone提供的远程向量数据库服务。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Images&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/cp11/IMG_0591688ACE75-1.jpeg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Images&#34; loading=&#34;lazy&#34; src=&#34;https://jiaaming.cn/images/cp11/IMG_0591688ACE75-1.jpeg&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;what-is-raggpt4&#34;&gt;What is RAG（@GPT4）：&lt;/h2&gt;
 &lt;p&gt;RAG（Retrieval-Augmented Generation）是一种结合了信息检索和生成模型的技术，旨在提高自然语言处理（NLP）任务中的生成质量和相关性。它通过利用外部的知识源（如文档数据库或信息库）来增强生成模型的能力，特别适用于问答、摘要、翻译等任务。&lt;/p&gt;
 &lt;h3 id=&#34;rag的工作原理&#34;&gt;RAG的工作原理&lt;/h3&gt;
@@ -117,12 +117,12 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;具体实现&#34;&gt;具体实现&lt;/h2&gt;
 &lt;p&gt;首先在Pinecone官网注册一个账号（省略了）&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Screenshot 2024-04-22 at 16.17.52.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/cp11/Screenshot_2024-04-22_at_16.17.52.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Screenshot 2024-04-22 at 16.17.52.png&#34; loading=&#34;lazy&#34; src=&#34;https://jiaaming.cn/images/cp11/Screenshot_2024-04-22_at_16.17.52.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Pinecone中是分一个project可以有很多index，一个index下可以划分很多namespace。由于用的免费版只能有一个project，一个index，因此只能通过定义namespace的方式来区别不同的部分。&lt;/p&gt;
 &lt;p&gt;例如本项目有药品（medicine）和化验（lab）的查询，下面定义了这两个namespace。namespace是插入时的参数，不用手动设定。查询时可以在智能namespace下查找，十分方便。&lt;/p&gt;
 &lt;p&gt;对于每条record，namespace和ID不可修改，但是可以根据ID来更新其中的Values和metadata（就是下面的Key-Value键值对。&lt;/p&gt;
 &lt;p&gt;对于Values，就是执行embedding时转换后的数组。我前端用的是OpenAI的text-embedding-ada-002，转换后有1536维，因此这里的length就是1536。&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Screenshot 2024-04-22 at 16.23.02.png&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/cp11/Screenshot_2024-04-22_at_16.23.02.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Screenshot 2024-04-22 at 16.23.02.png&#34; loading=&#34;lazy&#34; src=&#34;https://jiaaming.cn/images/cp11/Screenshot_2024-04-22_at_16.23.02.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;查阅Pinecone的&lt;a href=&#34;https://docs.pinecone.io/reference/api/data-plane/upsert&#34;&gt;API接口&lt;/a&gt;，先写插入的函数，其中upsert就是首先看id是否存在，存在的话就更新，否则就插入。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export const pineconeAdd = async (id, namespace, input_text, metadata) =&amp;gt; {
     const embedding = await embedText(input_text);
@@ -143,9 +143,9 @@
     </item>
     <item>
       <title>Leetcode record - July 2023</title>
-      <link>http://localhost:1313/en/post/chapter-9/</link>
+      <link>https://jiaaming.cn/en/post/chapter-9/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-9/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-9/</guid>
       <description>&lt;p&gt;关于区间集合：&lt;/p&gt;
 &lt;p&gt;这个问题的难点在于如何有效地处理会议的冲突。具体来说，需要在每个时间点追踪哪些会议正在进行，然后决定是否需要额外的会议室。下面是一些思考的建议和线索：&lt;/p&gt;
 &lt;ol&gt;
@@ -187,9 +187,9 @@
     </item>
     <item>
       <title>Use Swagger to show API in Django</title>
-      <link>http://localhost:1313/en/post/chapter-10/</link>
+      <link>https://jiaaming.cn/en/post/chapter-10/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-10/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-10/</guid>
       <description>&lt;h1 id=&#34;use-swagger-to-show-api-in-django&#34;&gt;Use Swagger to show API in Django&lt;/h1&gt;
 &lt;p&gt;Document: &lt;a href=&#34;https://drf-yasg.readthedocs.io/en/stable/readme.html#usage&#34;&gt;https://drf-yasg.readthedocs.io/en/stable/readme.html#usage&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;A good example: &lt;a href=&#34;https://debrajbhal.hashnode.dev/adding-custom-documentation-to-apis-in-django-rest-framework-using-drf-yasg&#34;&gt;https://debrajbhal.hashnode.dev/adding-custom-documentation-to-apis-in-django-rest-framework-using-drf-yasg&lt;/a&gt;&lt;/p&gt;
@@ -221,9 +221,9 @@
     </item>
     <item>
       <title>Leetcode record - June 2023</title>
-      <link>http://localhost:1313/en/post/chapter-8/</link>
+      <link>https://jiaaming.cn/en/post/chapter-8/</link>
       <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-8/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-8/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;strong&gt;&lt;a href=&#34;https://leetcode.cn/problems/maximum-distance-in-arrays/&#34;&gt;624. Maximum Distance in Arrays&lt;/a&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;You are given m arrays, where each array is sorted in ascending order.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;You can pick up two integers from two different arrays (each array picks one) and calculate the distance. We define the distance between two integers a and b to be their absolute difference |a - b|.&lt;/em&gt;&lt;/p&gt;
@@ -233,9 +233,9 @@
     </item>
     <item>
       <title>Leetcode record - March 2023</title>
-      <link>http://localhost:1313/en/post/chapter-7/</link>
+      <link>https://jiaaming.cn/en/post/chapter-7/</link>
       <pubDate>Tue, 21 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-7/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-7/</guid>
       <description>&lt;h3 id=&#34;binary-search&#34;&gt;Binary Search&lt;/h3&gt;
 &lt;p&gt;Find left bound/right bound&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;searchRange&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nums&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;target&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -268,9 +268,9 @@
     </item>
     <item>
       <title>基于Vue-Springboot的论文管理系统</title>
-      <link>http://localhost:1313/en/post/chapter-6/</link>
+      <link>https://jiaaming.cn/en/post/chapter-6/</link>
       <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-6/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-6/</guid>
       <description>&lt;p&gt;演示地址：&lt;a href=&#34;https://www.bilibili.com/video/BV1dr4y1u7Vq/?spm_id_from=333.999.0.0&#34;&gt;ECNU-2022Spring-DatabaseTermProject第四组_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;关于登录信息权限显示&#34;&gt;关于登录信息、权限显示&lt;/h3&gt;
 &lt;p&gt;这里利用sessionStorage将用户的信息跟权限（理论上应该一起作为user信息返回的，这里分开存储。后续页面左侧Aside的访问也可以根据存储的sessionStorage解决。&lt;/p&gt;
@@ -353,45 +353,45 @@
     </item>
     <item>
       <title>2022年度总结</title>
-      <link>http://localhost:1313/en/post/chapter-5/</link>
+      <link>https://jiaaming.cn/en/post/chapter-5/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-5/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-5/</guid>
       <description>随便写写</description>
     </item>
     <item>
       <title>[转载]关于时间复杂度与P、NP问题</title>
-      <link>http://localhost:1313/en/post/chapter-4/</link>
+      <link>https://jiaaming.cn/en/post/chapter-4/</link>
       <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-4/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-4/</guid>
       <description>存档</description>
     </item>
     <item>
       <title>记录一下搭建中用到的有趣开源库&amp;组件</title>
-      <link>http://localhost:1313/en/post/chapter-2/</link>
+      <link>https://jiaaming.cn/en/post/chapter-2/</link>
       <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-2/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-2/</guid>
       <description>hh</description>
     </item>
     <item>
       <title>Hello World Again</title>
-      <link>http://localhost:1313/en/post/chapter-1/</link>
+      <link>https://jiaaming.cn/en/post/chapter-1/</link>
       <pubDate>Sat, 09 Jul 2022 10:58:08 -0400</pubDate>
-      <guid>http://localhost:1313/en/post/chapter-1/</guid>
+      <guid>https://jiaaming.cn/en/post/chapter-1/</guid>
       <description>&lt;p&gt;最近看了很多学长和许多同龄人整的博客，然后心血来潮想自己搭一个玩玩。路子大致就是用了Hugo的框架，配置下github pages然后设置下vercel，再阿里云买个域名配置下DNS映射。这样网站既不用备案也能获得比较理想的访问速度。&lt;/p&gt;
 &lt;p&gt;或许以后会在这里面写写东西捏&lt;/p&gt;</description>
     </item>
     <item>
       <title>  About me</title>
-      <link>http://localhost:1313/en/about/</link>
+      <link>https://jiaaming.cn/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/about/</guid>
+      <guid>https://jiaaming.cn/en/about/</guid>
       <description>a software developer, film phtotgrapher, magician</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/en/contact/</link>
+      <link>https://jiaaming.cn/en/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/contact/</guid>
+      <guid>https://jiaaming.cn/en/contact/</guid>
       <description>I&amp;#39;d love to hear from you</description>
     </item>
   </channel>
