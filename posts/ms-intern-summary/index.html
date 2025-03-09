@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Microsoft Intern Summary: Optimizing VSCode Gradle Extension | James Liu&#39;s Space</title>
+<meta property="og:title" content="Microsoft Intern Summary: Optimizing VSCode Gradle Extension | James Liu&#39;s Space" />
+<meta name="twitter:title" content="Microsoft Intern Summary: Optimizing VSCode Gradle Extension | James Liu&#39;s Space" />
+<meta itemprop="name" content="Microsoft Intern Summary: Optimizing VSCode Gradle Extension | James Liu&#39;s Space" />
+<meta name="application-name" content="Microsoft Intern Summary: Optimizing VSCode Gradle Extension | James Liu&#39;s Space" />
+<meta property="og:site_name" content="James Liu&#39;s Space" />
+
+<meta name="description" content="Hi, I&#39;m James Liu, a software engineer. This is my personal blog.">
+<meta itemprop="description" content="Hi, I&#39;m James Liu, a software engineer. This is my personal blog." />
+<meta property="og:description" content="Hi, I&#39;m James Liu, a software engineer. This is my personal blog." />
+<meta name="twitter:description" content="Hi, I&#39;m James Liu, a software engineer. This is my personal blog." />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="https://www.jiaaming.cn/posts/ms-intern-summary/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-08-03T00:00:00Z />
+    <meta property="article:published_time" content=2024-08-03T00:00:00Z />
+    <meta property="og:url" content="https://www.jiaaming.cn/posts/ms-intern-summary/" />
+
+    
+    <meta property="og:article:author" content="James Liu" />
+    <meta property="article:author" content="James Liu" />
+    <meta name="author" content="James Liu" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Microsoft Intern Summary: Optimizing VSCode Gradle Extension",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-08-03",
+        "description": "",
+        "wordCount":  1132 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-08-03",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "James Liu\u0027s Space"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+    
+    <meta property="og:url" content="https://www.jiaaming.cn/posts/ms-intern-summary/">
+  <meta property="og:site_name" content="James Liu&#39;s Space">
+  <meta property="og:title" content="Microsoft Intern Summary: Optimizing VSCode Gradle Extension">
+  <meta property="og:description" content="Project Background Communication Between Servers Architecture Before the Merge Why Merge? How to Merge Architecture After the Merge Step 1: Merging Task Server and Build Server Challenges Connection Workflow Step 2: Merging Language Server to Gradle Server Performance After Merge How Was Performance Measured? Pre-Merge Memory Monitoring Post-Merge Memory Monitoring Performance Results Small Medium Large Super Large Project Background During my internship at Microsoft, I worked on the VSCode Gradle Extension. This extension was initially divided into three components:">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-08-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-08-03T00:00:00+00:00">
+    <meta property="article:tag" content="Tech">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Microsoft Intern Summary: Optimizing VSCode Gradle Extension">
+  <meta name="twitter:description" content="Project Background Communication Between Servers Architecture Before the Merge Why Merge? How to Merge Architecture After the Merge Step 1: Merging Task Server and Build Server Challenges Connection Workflow Step 2: Merging Language Server to Gradle Server Performance After Merge How Was Performance Measured? Pre-Merge Memory Monitoring Post-Merge Memory Monitoring Performance Results Small Medium Large Super Large Project Background During my internship at Microsoft, I worked on the VSCode Gradle Extension. This extension was initially divided into three components:">
+
+
+    
+
+    <link rel="canonical" href="https://www.jiaaming.cn/posts/ms-intern-summary/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://www.jiaaming.cn/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://www.jiaaming.cn/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/cv.pdf">
+                        CV
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Microsoft Intern Summary: Optimizing VSCode Gradle Extension</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-08-03T00:00:00&#43;00:00" itemprop="datePublished"> 3 Aug 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-background">Project Background</a>
+      <ul>
+        <li><a href="#communication-between-servers">Communication Between Servers</a></li>
+        <li><a href="#architecture-before-the-merge">Architecture Before the Merge</a></li>
+      </ul>
+    </li>
+    <li><a href="#why-merge">Why Merge?</a></li>
+    <li><a href="#how-to-merge">How to Merge</a>
+      <ul>
+        <li><a href="#architecture-after-the-merge">Architecture After the Merge</a></li>
+        <li><a href="#step-1-merging-task-server-and-build-server">Step 1: Merging Task Server and Build Server</a>
+          <ul>
+            <li><a href="#challenges">Challenges</a></li>
+            <li><a href="#connection-workflow">Connection Workflow</a></li>
+          </ul>
+        </li>
+        <li><a href="#step-2-merging-language-server-to-gradle-server">Step 2: Merging Language Server to Gradle Server</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance-after-merge">Performance After Merge</a>
+      <ul>
+        <li><a href="#how-was-performance-measured">How Was Performance Measured?</a>
+          <ul>
+            <li><a href="#pre-merge-memory-monitoring">Pre-Merge Memory Monitoring</a></li>
+            <li><a href="#post-merge-memory-monitoring">Post-Merge Memory Monitoring</a></li>
+          </ul>
+        </li>
+        <li><a href="#performance-results">Performance Results</a>
+          <ul>
+            <li><a href="#small">Small</a></li>
+            <li><a href="#medium">Medium</a></li>
+            <li><a href="#large">Large</a></li>
+            <li><a href="#super-large">Super Large</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <ul>
+<li><a href="/posts/ms-intern-summary/#project-background">Project Background</a>
+<ul>
+<li><a href="/posts/ms-intern-summary/#communication-between-servers">Communication Between Servers</a></li>
+<li><a href="/posts/ms-intern-summary/#architecture-before-the-merge">Architecture Before the Merge</a></li>
+</ul>
+</li>
+<li><a href="/posts/ms-intern-summary/#why-merge">Why Merge?</a></li>
+<li><a href="/posts/ms-intern-summary/#how-to-merge">How to Merge</a>
+<ul>
+<li><a href="/posts/ms-intern-summary/#architecture-after-the-merge">Architecture After the Merge</a></li>
+<li><a href="/posts/ms-intern-summary/#step-1-merging-task-server-and-build-server">Step 1: Merging Task Server and Build Server</a>
+<ul>
+<li><a href="/posts/ms-intern-summary/#challenges">Challenges</a></li>
+<li><a href="/posts/ms-intern-summary/#connection-workflow">Connection Workflow</a></li>
+</ul>
+</li>
+<li><a href="/posts/ms-intern-summary/#step-2-merging-language-server-to-gradle-server">Step 2: Merging Language Server to Gradle Server</a></li>
+</ul>
+</li>
+<li><a href="/posts/ms-intern-summary/#performance-after-merge">Performance After Merge</a>
+<ul>
+<li><a href="/posts/ms-intern-summary/#how-was-performance-measured">How Was Performance Measured?</a>
+<ul>
+<li><a href="/posts/ms-intern-summary/#pre-merge-memory-monitoring">Pre-Merge Memory Monitoring</a></li>
+<li><a href="/posts/ms-intern-summary/#post-merge-memory-monitoring">Post-Merge Memory Monitoring</a></li>
+</ul>
+</li>
+<li><a href="/posts/ms-intern-summary/#performance-results">Performance Results</a>
+<ul>
+<li><a href="/posts/ms-intern-summary/#small">Small</a></li>
+<li><a href="/posts/ms-intern-summary/#medium">Medium</a></li>
+<li><a href="/posts/ms-intern-summary/#large">Large</a></li>
+<li><a href="/posts/ms-intern-summary/#super-large">Super Large</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="project-background">Project Background</h2>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/20240803213701.png" alt="Project Image"></p>
+<p>During my internship at Microsoft, I worked on the <a href="https://github.com/microsoft/vscode-gradle">VSCode Gradle Extension</a>. This extension was initially divided into three components:</p>
+<ol>
+<li><strong>Gradle Task Server:</strong> Runs in the background, providing project and task information, and executing Gradle tasks.</li>
+<li><strong>Gradle Language Server:</strong> Offers language features such as code completion and diagnostics for Gradle script files.</li>
+<li><strong>Gradle Project Importer:</strong> Imports Gradle projects detected by the <strong>Gradle Build Server</strong> into the workspace.</li>
+</ol>
+<p>My role was to merge these servers into a single process, with each component running in a separate thread, thereby reducing memory usage. This consolidation is crucial for integrating the extension into the <a href="https://github.com/microsoft/vscode-java-pack">VSCode Java Pack</a>, which is widely used by VSCode Java developers.</p>
+<h3 id="communication-between-servers">Communication Between Servers</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Server</th>
+          <th>Client</th>
+          <th>Communication Method</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Task Server: Java</td>
+          <td>Task Client: TypeScript</td>
+          <td><a href="https://grpc.io/">gRPC</a>: TCP socket</td>
+      </tr>
+      <tr>
+          <td>Language Server: Java</td>
+          <td>Language Client: TypeScript</td>
+          <td><a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a>, <a href="https://www.jsonrpc.org/specification">JSON-RPC</a>: Stdio</td>
+      </tr>
+      <tr>
+          <td>Build Server: Java</td>
+          <td>Build Client: Java</td>
+          <td><a href="https://build-server-protocol.github.io/">Build Server Protocol</a>: Stdio</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="architecture-before-the-merge">Architecture Before the Merge</h3>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/20240803233221.png" alt="Architecture Before Merge"></p>
+<h2 id="why-merge">Why Merge?</h2>
+<p>Originally, the extension started three separate Java processes:</p>
+<ol>
+<li><strong>Task Server:</strong> Previously called the Gradle Server, this component was adopted by Microsoft from <a href="https://github.com/badsyntax">Richard Willis</a> and was the initial server.</li>
+<li><strong>Language Server:</strong> Also developed by Richard Willis, providing language features.</li>
+<li><strong>Build Server:</strong> Added by Microsoft to support project importing. More details can be found <a href="https://github.com/microsoft/build-server-for-gradle">here</a>.</li>
+</ol>
+<p>This setup incurred significant overhead due to running three separate processes, as shown below:</p>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/bfm.png" alt="Process Overhead"></p>
+<p>Since our goal is to include this extension in the VSCode Java Pack, which is used by many Java developers, reducing memory consumption was essential.</p>
+<p>Initially, the Task Server and Language Server would start when the extension was loaded, whereas the Build Server, being an external dependency, would start on-demand when the importer was loaded.</p>
+<h2 id="how-to-merge">How to Merge</h2>
+<p>Since the three servers are independent and do not share data, modifying the startup logic to launch them simultaneously using Java multithreading was a suitable solution.</p>
+<h3 id="architecture-after-the-merge">Architecture After the Merge</h3>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/20240804104905.png" alt="Architecture After Merge"></p>
+<h3 id="step-1-merging-task-server-and-build-server">Step 1: Merging Task Server and Build Server</h3>
+<h4 id="challenges">Challenges</h4>
+<ol>
+<li>
+<p><strong>Standard I/O Issues:</strong> After merging, using standard input/output was no longer feasible due to conflicts between multiple threads. TCP sockets couldn&rsquo;t be used due to security concerns, so <a href="https://en.wikipedia.org/wiki/Named_pipe">Named Pipes</a> were employed as a compliant solution.</p>
+</li>
+<li>
+<p><strong>Windows Compatibility:</strong> Java&rsquo;s support for named pipes on Windows is not very user-friendly, requiring complex OS-level handling. While Unix systems use Unix Domain Sockets, Windows uses AsynchronousFileChannel.</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="c1">// Connection between Build Server and Build Client</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">org</span><span class="p">.</span><span class="na">eclipse</span><span class="p">.</span><span class="na">lsp4j</span><span class="p">.</span><span class="na">jsonrpc</span><span class="p">.</span><span class="na">Launcher</span><span class="o">&lt;</span><span class="n">BuildClient</span><span class="o">&gt;</span><span class="w"> </span><span class="n">launcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">org</span><span class="p">.</span><span class="na">eclipse</span><span class="p">.</span><span class="na">lsp4j</span><span class="p">.</span><span class="na">jsonrpc</span><span class="p">.</span><span class="na">Launcher</span><span class="p">.</span><span class="na">Builder</span><span class="o">&lt;</span><span class="n">BuildClient</span><span class="o">&gt;</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">setOutput</span><span class="p">(</span><span class="n">outputStream</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">setInput</span><span class="p">(</span><span class="n">inputStream</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">setLocalService</span><span class="p">(</span><span class="n">gradleBuildServer</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">setRemoteInterface</span><span class="p">(</span><span class="n">BuildClient</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">setExecutorService</span><span class="p">(</span><span class="n">Executors</span><span class="p">.</span><span class="na">newCachedThreadPool</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="na">create</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">buildTargetService</span><span class="p">.</span><span class="na">setClient</span><span class="p">(</span><span class="n">launcher</span><span class="p">.</span><span class="na">getRemoteProxy</span><span class="p">());</span><span class="w">
+</span></span></span></code></pre></div><ol start="3">
+<li><strong>Named Pipe Creation:</strong> The solution required creating and listening to named pipes. In the Node.js environment, libraries like <a href="https://nodejs.org/api/net.html#netcreateserveroptions-connectionlistener">net.Socket</a> handle this directly, enabling listening on named pipes.</li>
+</ol>
+<p>To bridge the gap, I implemented an additional <a href="https://github.com/microsoft/vscode-gradle/blob/b71fcb2e1e4c8aeafc9ece92a13659f47e5c6009/extension/src/bs/BspProxy.ts#L16">BspProxy</a> layer. This proxy establishes named pipe connections between the Build Server and Build Client during startup, facilitating indirect communication.</p>
+<ol start="4">
+<li>
+<p><strong>Named Pipe Path Generation:</strong></p>
+<ul>
+<li>
+<p><strong>Build Server and BspProxy:</strong> Since the Build Server can start with the extension, the extension generates a random file name upon startup, passing it to the Build Server, which then listens on that named pipe.</p>
+</li>
+<li>
+<p><strong>Build Client and BspProxy:</strong> The Build Client&rsquo;s startup is tied to the Gradle project import process, controlled by the Java Language Server. The challenge was how the Build Client could generate and pass the named pipe path to the VSCode Extension&rsquo;s BspProxy.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Luckily, the <code>JavaLanguageServerPlugin</code> is able to send a notification to VSCode, informing it of the named pipe path, and the extension can then pass this information to the BspProxy.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Send message to VSCode</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendImporterPipeName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">pipeName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">JavaLanguageServerPlugin</span><span class="p">.</span><span class="na">getInstance</span><span class="p">().</span><span class="na">getClientConnection</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="na">sendNotification</span><span class="p">(</span><span class="s">&#34;gradle.onWillImporterConnect&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">pipeName</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="c1">// Receive message from Java
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">private</span> <span class="nx">registerCommand</span><span class="p">()</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">context</span><span class="p">.</span><span class="nx">subscriptions</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">vscode</span><span class="p">.</span><span class="nx">commands</span><span class="p">.</span><span class="nx">registerCommand</span><span class="p">(</span><span class="s2">&#34;gradle.onWillImporterConnect&#34;</span><span class="p">,</span> <span class="p">(</span><span class="nx">pipeName</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="p">.</span><span class="nx">_onImporterReady</span><span class="p">.</span><span class="nx">fire</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">pipeName</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Since the import process controls initialization, communication is one-way, using notifications. The Java side cannot receive feedback from VSCode. Therefore, polling was used to establish the connection once VSCode was ready.</p>
+<h4 id="connection-workflow">Connection Workflow</h4>
+<p>The entire connection process is illustrated below:</p>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/20240804110358.png" alt="Connection Workflow"></p>
+<p>This was the most complex part of the project, but it successfully merged the Build Server and Task Server.</p>
+<h3 id="step-2-merging-language-server-to-gradle-server">Step 2: Merging Language Server to Gradle Server</h3>
+<p>This step was more straightforward. The VSCode Language Server and Client libraries support various connection methods.</p>
+<p>By packaging the Language Server as a local dependency and using named pipes for communication, I was able to merge it with the Gradle Server seamlessly.</p>
+<p><strong>Dependency Management:</strong></p>
+<p>The primary challenge was handling shared dependencies between the Gradle Server and Gradle Language Server. By creating a <a href="https://stackoverflow.com/questions/19150811/what-is-a-fat-jar">fat JAR</a> for the Language Server and placing it at the end of the Gradle Server&rsquo;s classpath, dependency conflicts were resolved.</p>
+<h2 id="performance-after-merge">Performance After Merge</h2>
+<p>After Merge, it only got one single Java process <code>GradleServer</code>.
+<img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/af-merge.png" alt="af-merge"></p>
+<h3 id="how-was-performance-measured">How Was Performance Measured?</h3>
+<p>Memory consumption was the primary focus after the merge. Before the merge, we could determine total memory usage by monitoring the memory consumption of each of the three separate processes. I developed a Python script to automate this process.</p>
+<h4 id="pre-merge-memory-monitoring">Pre-Merge Memory Monitoring</h4>
+<ol>
+<li>
+<p><strong>Polling for Process IDs</strong>: The script first polls the system to find the process IDs (PIDs) of the three servers based on their class names.</p>
+</li>
+<li>
+<p><strong>Monitoring Memory Usage</strong>: Using the <code>psutil</code> library, the script captures the <a href="https://www.baeldung.com/linux/resident-set-vs-virtual-memory-size">Resident Set Size (RSS)</a> usage of each process individually and then sums them up to obtain the total memory usage.</p>
+</li>
+</ol>
+<p>This script runs before starting VSCode to monitor memory consumption when opening a Gradle project. It outputs memory usage data every second.</p>
+<blockquote>
+<p>What is <strong>RSS Monitoring</strong>? :</p>
+<p>Resident Set Size (RSS), a measure provided by the operating system that indicates the actual amount of physical memory occupied by a process.</p>
+<p>For Java programs, RSS includes not only the Java heap memory but also Metaspace, code cache, memory used by the JVM itself, and JVM stack space.</p></blockquote>
+<h4 id="post-merge-memory-monitoring">Post-Merge Memory Monitoring</h4>
+<p>After merging the processes into a single thread, I used <code>Plotly</code> to visualize the memory usage:</p>
+<ul>
+<li>
+<p><strong>Plotting Memory Usage</strong>: I plotted the sum of memory usage for the three pre-merge servers against the single merged process over time. This line chart illustrates real-time memory changes as a Gradle project is opened.</p>
+</li>
+<li>
+<p><strong>Version Comparison</strong>: Between versions 3.13.5 (before the merge) and 3.16.2 (after the merge).</p>
+</li>
+</ul>
+<h3 id="performance-results">Performance Results</h3>
+<p>To Test the performance, I used the four different size of project:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Project Size</th>
+          <th>Description</th>
+          <th>Number of Gradle Tasks</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Small</td>
+          <td>Basic project initialized with <code>Gradle init</code> command</td>
+          <td>34</td>
+      </tr>
+      <tr>
+          <td>Medium</td>
+          <td><a href="https://github.com/microsoft/vscode-gradle">microsoft/vscode-gradle</a> project</td>
+          <td>~380</td>
+      </tr>
+      <tr>
+          <td>Large</td>
+          <td><a href="https://github.com/apache/lucene">apache/lucene</a> project</td>
+          <td>~3,300</td>
+      </tr>
+      <tr>
+          <td>Super Large</td>
+          <td><a href="https://github.com/gradle/gradle">gradle/gradle</a> project</td>
+          <td>~42,000</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="small">Small</h4>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/small2.png" alt="small2"></p>
+<h4 id="medium">Medium</h4>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/newplot.png" alt="medium"></p>
+<h4 id="large">Large</h4>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/large-copy.png" alt="large"></p>
+<h4 id="super-large">Super Large</h4>
+<p><img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/Screenshot%202024-08-13%20at%2012.01.35.png" alt="super-large"></p>
+<p>The results showed significant memory savings, especially with smaller projects, demonstrating the efficiency of the merged architecture.</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/jiaaming" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://x.com/james_1iu" target="_blank" rel="noopener noreferrer me"
+    title="X">
+    <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@JamesLiu2002" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://space.bilibili.com/70573422" target="_blank" rel="noopener noreferrer me"
+    title="Bilibili">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+    <rect x="1.3333" y="6" width="21.333" height="15.333" rx="4" ry="4"/>
+    <path d="m8 12.4v1.2"/>
+    <path d="m16 12.4v1.2"/>
+    <path d="m5.8853 2.6667 2.6667 2.6667"/>
+    <path d="m18.115 2.6667-2.6667 2.6667"/>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 James Liu.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script src="https://www.jiaaming.cn/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>

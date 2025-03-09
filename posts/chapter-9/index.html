@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Leetcode record - July 2023 | James Liu&#39;s Space</title>
+<meta property="og:title" content="Leetcode record - July 2023 | James Liu&#39;s Space" />
+<meta name="twitter:title" content="Leetcode record - July 2023 | James Liu&#39;s Space" />
+<meta itemprop="name" content="Leetcode record - July 2023 | James Liu&#39;s Space" />
+<meta name="application-name" content="Leetcode record - July 2023 | James Liu&#39;s Space" />
+<meta property="og:site_name" content="James Liu&#39;s Space" />
+
+<meta name="description" content="Hi, I&#39;m James Liu, a software engineer. This is my personal blog.">
+<meta itemprop="description" content="Hi, I&#39;m James Liu, a software engineer. This is my personal blog." />
+<meta property="og:description" content="Hi, I&#39;m James Liu, a software engineer. This is my personal blog." />
+<meta name="twitter:description" content="Hi, I&#39;m James Liu, a software engineer. This is my personal blog." />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="http://localhost:1313/posts/chapter-9/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-07-29T00:00:00Z />
+    <meta property="article:published_time" content=2023-07-29T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/posts/chapter-9/" />
+
+    
+    <meta property="og:article:author" content="James Liu" />
+    <meta property="article:author" content="James Liu" />
+    <meta name="author" content="James Liu" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Leetcode record - July 2023",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-07-29",
+        "description": "",
+        "wordCount":  940 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-07-29",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "James Liu\u0027s Space"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.143.1">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/chapter-9/">
+  <meta property="og:site_name" content="James Liu&#39;s Space">
+  <meta property="og:title" content="Leetcode record - July 2023">
+  <meta property="og:description" content="关于区间集合：
+这个问题的难点在于如何有效地处理会议的冲突。具体来说，需要在每个时间点追踪哪些会议正在进行，然后决定是否需要额外的会议室。下面是一些思考的建议和线索：
+排序：这是一个重要的线索。当你看到这种需要比较或者组织时间区间的问题时，排序通常是一个有用的第一步。在本问题中，按照开始时间对会议进行排序可以帮助我们逐个地处理会议，确保我们先处理开始时间早的会议。 优先队列（最小堆）：在处理一系列事件，其中每个事件都有开始和结束时间，并且可能会发生冲突的情况下，优先队列（特别是最小堆）经常会被用到。在本问题中，我们需要知道当前正在进行的所有会议中最早结束的那一个，以决定是否需要一个新的会议室。最小堆正好可以提供这个功能，因为它总是把最小的元素放在前面。 贪心思想：这是一个隐藏的线索。这个问题可以通过一种贪心的方式来解决，即总是尽可能地复用会议室。具体来说，每次当一个新的会议开始时，如果有一个会议已经结束，那么我们就可以在同一个会议室举行这个新的会议，而不需要新开一个会议室。这个策略保证了我们总是使用最少数量的会议室。 重叠区间问题：类似的问题经常出现在算法问题中，所以可以作为一个模式来识别。当你看到需要处理重叠区间的问题时，可以想到使用排序和优先队列来解决。 在碰到这类问题时，练习和经验也很重要。一开始可能不容易看出解决方案，但通过解决更多的类似问题，你将能够更容易地识别出相应的模式，并找到正确的方法来解决这类问题。
+253. Meeting Rooms II
+Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
+Example 1:
+Input: intervals = [[0,30],[5,10],[15,20]] Output: 2
+Example 2:
+Input: intervals = [[7,10],[2,4]] Output: 1
+Constraints:
+1 &lt;= intervals.length &lt;= 104 0 &lt;= starti &lt; endi &lt;= 106 class Solution { public int minMeetingRooms(int[][] intervals) { Arrays.sort(intervals, (a, b)-&gt;Integer.compare(a[0], b[0])); PriorityQueue&lt;Integer&gt; heap = new PriorityQueue&lt;&gt;(); heap.add(intervals[0][1]); int res = 1; for(int i = 1;i&lt;intervals.length;i&#43;&#43;){ if(intervals[i][0]&gt;=heap.peek()){ heap.poll(); }else{ res&#43;&#43;; } heap.add(intervals[i][1]); } return res; } } 这段代码的主要结构和组成：">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-07-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-07-29T00:00:00+00:00">
+    <meta property="article:tag" content="技术">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Leetcode record - July 2023">
+  <meta name="twitter:description" content="关于区间集合：
+这个问题的难点在于如何有效地处理会议的冲突。具体来说，需要在每个时间点追踪哪些会议正在进行，然后决定是否需要额外的会议室。下面是一些思考的建议和线索：
+排序：这是一个重要的线索。当你看到这种需要比较或者组织时间区间的问题时，排序通常是一个有用的第一步。在本问题中，按照开始时间对会议进行排序可以帮助我们逐个地处理会议，确保我们先处理开始时间早的会议。 优先队列（最小堆）：在处理一系列事件，其中每个事件都有开始和结束时间，并且可能会发生冲突的情况下，优先队列（特别是最小堆）经常会被用到。在本问题中，我们需要知道当前正在进行的所有会议中最早结束的那一个，以决定是否需要一个新的会议室。最小堆正好可以提供这个功能，因为它总是把最小的元素放在前面。 贪心思想：这是一个隐藏的线索。这个问题可以通过一种贪心的方式来解决，即总是尽可能地复用会议室。具体来说，每次当一个新的会议开始时，如果有一个会议已经结束，那么我们就可以在同一个会议室举行这个新的会议，而不需要新开一个会议室。这个策略保证了我们总是使用最少数量的会议室。 重叠区间问题：类似的问题经常出现在算法问题中，所以可以作为一个模式来识别。当你看到需要处理重叠区间的问题时，可以想到使用排序和优先队列来解决。 在碰到这类问题时，练习和经验也很重要。一开始可能不容易看出解决方案，但通过解决更多的类似问题，你将能够更容易地识别出相应的模式，并找到正确的方法来解决这类问题。
+253. Meeting Rooms II
+Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
+Example 1:
+Input: intervals = [[0,30],[5,10],[15,20]] Output: 2
+Example 2:
+Input: intervals = [[7,10],[2,4]] Output: 1
+Constraints:
+1 &lt;= intervals.length &lt;= 104 0 &lt;= starti &lt; endi &lt;= 106 class Solution { public int minMeetingRooms(int[][] intervals) { Arrays.sort(intervals, (a, b)-&gt;Integer.compare(a[0], b[0])); PriorityQueue&lt;Integer&gt; heap = new PriorityQueue&lt;&gt;(); heap.add(intervals[0][1]); int res = 1; for(int i = 1;i&lt;intervals.length;i&#43;&#43;){ if(intervals[i][0]&gt;=heap.peek()){ heap.poll(); }else{ res&#43;&#43;; } heap.add(intervals[i][1]); } return res; } } 这段代码的主要结构和组成：">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/chapter-9/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/pages/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/cv.pdf">
+                        CV
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Leetcode record - July 2023</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-07-29T00:00:00&#43;00:00" itemprop="datePublished"> 29 Jul 2023 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#关于栈">关于栈</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>关于区间集合：</p>
+<p>这个问题的难点在于如何有效地处理会议的冲突。具体来说，需要在每个时间点追踪哪些会议正在进行，然后决定是否需要额外的会议室。下面是一些思考的建议和线索：</p>
+<ol>
+<li><strong>排序</strong>：这是一个重要的线索。当你看到这种需要比较或者组织时间区间的问题时，排序通常是一个有用的第一步。在本问题中，按照开始时间对会议进行排序可以帮助我们逐个地处理会议，确保我们先处理开始时间早的会议。</li>
+<li><strong>优先队列（最小堆）</strong>：在处理一系列事件，其中每个事件都有开始和结束时间，并且可能会发生冲突的情况下，优先队列（特别是最小堆）经常会被用到。在本问题中，我们需要知道当前正在进行的所有会议中最早结束的那一个，以决定是否需要一个新的会议室。最小堆正好可以提供这个功能，因为它总是把最小的元素放在前面。</li>
+<li><strong>贪心思想</strong>：这是一个隐藏的线索。这个问题可以通过一种贪心的方式来解决，即总是尽可能地复用会议室。具体来说，每次当一个新的会议开始时，如果有一个会议已经结束，那么我们就可以在同一个会议室举行这个新的会议，而不需要新开一个会议室。这个策略保证了我们总是使用最少数量的会议室。</li>
+<li><strong>重叠区间问题</strong>：类似的问题经常出现在算法问题中，所以可以作为一个模式来识别。当你看到需要处理重叠区间的问题时，可以想到使用排序和优先队列来解决。</li>
+</ol>
+<p>在碰到这类问题时，练习和经验也很重要。一开始可能不容易看出解决方案，但通过解决更多的类似问题，你将能够更容易地识别出相应的模式，并找到正确的方法来解决这类问题。</p>
+<p><strong><strong><a href="https://leetcode.cn/problems/meeting-rooms-ii/">253. Meeting Rooms II</a></strong></strong></p>
+<p><strong>Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.</strong></p>
+<p><code>Example 1:</code></p>
+<p><code>Input: intervals = [[0,30],[5,10],[15,20]] Output: 2</code></p>
+<p><code>Example 2:</code></p>
+<p><code>Input: intervals = [[7,10],[2,4]] Output: 1</code></p>
+<p><code>Constraints:</code></p>
+<ul>
+<li><code>1 &lt;= intervals.length &lt;= 104</code></li>
+<li><code>0 &lt;= starti &lt; endi &lt;= 106</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">minMeetingRooms</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">intervals</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">intervals</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="n">a</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">heap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">heap</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">intervals</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]&gt;=</span><span class="n">heap</span><span class="p">.</span><span class="na">peek</span><span class="p">()){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">heap</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">res</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">heap</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>这段代码的主要结构和组成：</p>
+<ol>
+<li>首先，代码按照每个会议的开始时间进行排序。这样，我们可以依次处理每个会议，并确保我们在处理任何一个会议之前已经处理完了所有开始时间更早的会议。</li>
+<li>然后，代码创建了一个最小堆（<code>PriorityQueue</code>），用来跟踪所有当前正在进行的会议的结束时间。这样，我们可以快速找到最早结束的会议。</li>
+</ol>
+<p>接下来，我会详细解释这段代码的每一步：</p>
+<ol>
+<li><code>heap.add(intervals[0][1]);</code> 这行代码把第一个会议的结束时间添加到了堆中。因为这是第一个会议，所以我们一定需要一个会议室来举行这个会议。</li>
+<li>然后，代码进入了一个循环，依次处理每一个会议。对于每一个会议，它首先检查这个会议的开始时间是否晚于当前最早结束的会议的结束时间（<code>if(intervals[i][0] &gt;= heap.peek()){...}</code>）。如果是的话，那么我们可以在同一个会议室举行这个新的会议，因此我们从堆中移除最早结束的会议的结束时间（<code>heap.poll();</code>），并把新的会议的结束时间添加到堆中（<code>heap.add(intervals[i][1]);</code>）。如果不是的话，那么我们需要一个新的会议室来举行这个会议，因此我们直接把新的会议的结束时间添加到堆中（<code>heap.add(intervals[i][1]);</code>）。</li>
+<li>最后，当所有的会议都被处理完之后，堆中剩下的元素数量就是我们需要的会议室的数量。因为对于堆中的每一个元素，都存在一个正在进行的会议或者将要进行的会议，而且这些会议的时间都是有冲突的，所以我们需要为堆中的每一个元素提供一个会议室。因此，我们返回了堆的大小（<code>return heap.size();</code>），作为最小需要的会议室的数量。</li>
+</ol>
+<hr>
+<p><strong><strong><a href="https://leetcode.cn/problems/add-bold-tag-in-string/">616. Add Bold Tag in String</a></strong></strong></p>
+<p><strong>You are given a string s and an array of strings words.</strong></p>
+<p><strong>You should add a closed pair of bold tag <b> and </b> to wrap the substrings in s that exist in words.</strong></p>
+<p><strong>If two such substrings overlap, you should wrap them together with only one pair of closed bold-tag.
+If two substrings wrapped by bold tags are consecutive, you should combine them.
+Return s after adding the bold tags.</strong></p>
+<p><code>Example 1:</code></p>
+<p><code>Input: s = &quot;abcxyz123&quot;, words = [&quot;abc&quot;,&quot;123&quot;] Output: &quot;&lt;b&gt;abc&lt;/b&gt;xyz&lt;b&gt;123&lt;/b&gt;&quot;</code></p>
+<p><code>Input: s = &quot;aaabbb&quot;, words = [&quot;aa&quot;,&quot;b&quot;] Output: &quot;&lt;b&gt;aaabbb&lt;/b&gt;&quot;</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">addBoldTag</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">words</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">boolean</span><span class="o">[]</span><span class="w"> </span><span class="n">bold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">boolean</span><span class="o">[</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">2</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">words</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="n">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">i</span><span class="o">+</span><span class="n">word</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">bold</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">indexOf</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">StringBuilder</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bold</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">bold</span><span class="o">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="o">]</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">ans</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&#34;&lt;b&gt;&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">ans</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">bold</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="n">bold</span><span class="o">[</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">ans</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="s">&#34;&lt;/b&gt;&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>不同与上一题的处理思路，这里设置了一个bold数组来记录每一位的状态（因为数据为String，遍历次数少，如果上一题的话时间复杂度达到了N^2，可能会超时）。区间集合问题有时需要关注两端（头和尾），有时可以采取像这样区间合并的方法。</p>
+<p><strong><strong><a href="https://leetcode.cn/problems/remove-interval/">1272. Remove Interval</a></strong></strong></p>
+<p><strong>A set of real numbers can be represented as the union of several disjoint intervals, where each interval is in the form [a, b). A real number x is in the set if one of its intervals [a, b) contains x (i.e. a &lt;= x &lt; b).</strong></p>
+<p><strong>You are given a sorted list of disjoint intervals intervals representing a set of real numbers as described above, where intervals[i] = [ai, bi] represents the interval [ai, bi). You are also given another interval toBeRemoved.</strong></p>
+<p><strong>Return the set of real numbers with the interval toBeRemoved removed from intervals. In other words, return the set of real numbers such that every x in the set is in intervals but not in toBeRemoved. Your answer should be a sorted list of disjoint intervals as described above.</strong></p>
+<p>Input: intervals = [[0,2],[3,4],[5,7]], toBeRemoved = [1,6]
+Output: [[0,1],[6,7]]</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">//分类讨论</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//intervals[i][j] &gt;= toBeRemoved[0] &amp;&amp; intervals[i][j] &lt;= toBeRemoved[1]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="nf">removeInterval</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">intervals</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">toBeRemoved</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">intervals</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">toBeRemoved</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">toBeRemoved</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">res</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="p">)));</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// From toBeRemoved&#39;s point of view!</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">toBeRemoved</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">res</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">toBeRemoved</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">toBeRemoved</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">res</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">toBeRemoved</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">intervals</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="关于栈">关于栈</h3>
+<p>遇到问题时的关键词：反转</p>
+<p><strong><strong><a href="https://leetcode.cn/problems/ternary-expression-parser/">439. Ternary Expression Parser</a></strong></strong></p>
+<blockquote>
+<p>Input: expression = &ldquo;F?1:T?4:5&rdquo;
+Output: &ldquo;4&rdquo;
+Explanation: The conditional expressions group right-to-left. Using parenthesis, it is read/evaluated as:
+&ldquo;(F ? 1 : (T ? 4 : 5))&rdquo; &ndash;&gt; &ldquo;(F ? 1 : 4)&rdquo; &ndash;&gt; &ldquo;4&rdquo;
+or &ldquo;(F ? 1 : (T ? 4 : 5))&rdquo; &ndash;&gt; &ldquo;(T ? 4 : 5)&rdquo; &ndash;&gt; &ldquo;4&rdquo;</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">parseTernary</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">expression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">expression</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&#34;&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">expression</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">expression</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">stack</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;?&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// Pop &#39;?&#39; symbol</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="kt">char</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// Pop &#39;:&#39; symbol</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="kt">char</span><span class="w"> </span><span class="n">second</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">//for every ternary expression, only left one value. So in </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// the enad, there is only one value.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;T&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">first</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;F&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">second</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>三元表达式从右向左扫描更简单和方便</p>
+<p>**<strong><a href="https://leetcode.cn/problems/find-permutation/">484. Find Permutation</a></strong></p>
+<blockquote>
+<p>Input: s = &ldquo;DI&rdquo;
+Output: [2,1,3]
+Explanation: Both [2,1,3] and [3,1,2] can be represented as &ldquo;DI&rdquo;, but since we want to find the smallest lexicographical permutation, you should return [2,1,3]</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="nf">findPermutation</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">lens</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="o">[]</span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="o">+</span><span class="n">1</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lens</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">st</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;I&#39;</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">ret</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">index</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">st</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">lens</span><span class="o">+</span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">ret</span><span class="o">[</span><span class="n">index</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="na">pop</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">index</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>理解这个问题的关键在于理解题目中的 &ldquo;lexicographically smallest&rdquo; 和 &ldquo;I&rdquo;、&ldquo;D&rdquo; 这两个条件的含义，并根据这些条件来进行思考。</p>
+<ul>
+<li>&ldquo;Lexicographically smallest&rdquo;：这意味着你希望在可能的所有满足条件的数组中，你希望数字尽可能的靠前，尤其是在比较高位的数字。</li>
+<li>&ldquo;I&rdquo; 和 &ldquo;D&rdquo;：这两个条件给你提供了数组中相邻元素之间的关系。&ldquo;I&rdquo; 表示下一个数字比当前数字大，&ldquo;D&rdquo; 表示下一个数字比当前数字小。</li>
+</ul>
+<p>将这两个条件结合，你可以得到这样的想法：在满足 &ldquo;I&rdquo; 和 &ldquo;D&rdquo; 条件的同时，尽可能地让数组的每一位都尽可能小，那么最直观的想法就是在满足条件的情况下，尽可能使用较小的数字。于是，一个自然的想法是，每次遇到 &ldquo;I&rdquo; 时，就尽可能地使用小的数字，而每次遇到 &ldquo;D&rdquo; 时，由于要比前一个数字小，所以可能需要使用较大的数字，但我们希望它尽可能小，所以会尽量延后选择，直到遇到 &ldquo;I&rdquo; 或者字符串结束时，再进行选择。</p>
+<p>再深一步，我们会注意到，字符串中的 &ldquo;D&rdquo; 总是连续出现的，而且 &ldquo;I&rdquo; 和 &ldquo;D&rdquo; 是交替出现的。这时，我们可以联想到 &ldquo;反转&rdquo; 这个操作，也就是说，每次遇到一段连续的 &ldquo;D&rdquo;，我们可以先顺序选择数字，然后在最后进行反转，这样就可以满足 &ldquo;D&rdquo; 的条件，同时又保证了字典序最小。</p>
+<p><strong><strong><a href="https://leetcode.cn/problems/parallel-courses-iii/">2050. Parallel Courses III</a></strong></strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">minimumTime</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">relations</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;[]</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">setAll</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">relations</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">pre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">,</span><span class="w"> </span><span class="n">then</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">g</span><span class="o">[</span><span class="n">pre</span><span class="o">]</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">then</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="o">++</span><span class="n">in</span><span class="o">[</span><span class="n">then</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 0: 1     1: 1       2: 2     3: 1     4:0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//入度 = 0：此课无任何先修课程要求</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Queue</span><span class="w"> </span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayDeque</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">in</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="n">0</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">f</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">time</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="w"> </span><span class="n">time</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span><span class="w"> </span><span class="c1">//处理edge case</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="na">poll</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">:</span><span class="w"> </span><span class="n">g</span><span class="o">[</span><span class="n">tmp</span><span class="o">]</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">in</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">--</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">f</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">f</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">,</span><span class="n">f</span><span class="o">[</span><span class="n">tmp</span><span class="o">]+</span><span class="n">time</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="p">(</span><span class="n">in</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">q</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">j</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ans</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//51243</span><span class="w">
+</span></span></span></code></pre></div><p>难点主要在于将拓扑排序和动态规划结合。</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/jiaaming" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://x.com/james_1iu" target="_blank" rel="noopener noreferrer me"
+    title="X">
+    <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+</svg>
+</a>
+<a href="https://www.youtube.com/@JamesLiu2002" target="_blank" rel="noopener noreferrer me"
+    title="Youtube">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+</a>
+<a href="https://space.bilibili.com/70573422" target="_blank" rel="noopener noreferrer me"
+    title="Bilibili">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+    <rect x="1.3333" y="6" width="21.333" height="15.333" rx="4" ry="4"/>
+    <path d="m8 12.4v1.2"/>
+    <path d="m16 12.4v1.2"/>
+    <path d="m5.8853 2.6667 2.6667 2.6667"/>
+    <path d="m18.115 2.6667-2.6667 2.6667"/>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 James Liu.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
