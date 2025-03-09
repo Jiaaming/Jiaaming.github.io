@@ -1,26 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Pages on James Liu&#39;s Space</title>
-    <link>https://www.jiaaming.cn/pages/</link>
-    <description>Recent content in Pages on James Liu&#39;s Space</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://www.jiaaming.cn/pages/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title> About</title>
-      <link>https://www.jiaaming.cn/pages/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jiaaming.cn/pages/about/</guid>
-      
-      <description>&lt;p&gt;&lt;figure&gt;&lt;img src=&#34;https://www.jiaaming.cn/images/aboutme.jpg&#34;&gt;
-&lt;/figure&gt;
-
-2022.8 - 2023.5 @UCB in California, US          &lt;br&gt;
-2020.8 - 2024.6 @ECNU in Shanghai, China &lt;br&gt;
-2024.8 - 2025.12 @SFU in BC, Canada&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on James Liu's Space</title><link>http://localhost:1313/pages/</link><description>Recent content in Pages on James Liu's Space</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml"/><item><title> About</title><link>http://localhost:1313/pages/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/pages/about/</guid><description>&lt;p>&lt;figure>&lt;img src="http://localhost:1313/images/aboutme.jpg">
+&lt;/figure>
+2022.8 - 2023.5 @UCB in California, US &lt;br>
+2020.8 - 2024.6 @ECNU in Shanghai, China &lt;br>
+2024.8 - 2025.12 @SFU in BC, Canada&lt;/p></description></item></channel></rss>

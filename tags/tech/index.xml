@@ -1,89 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tech on James Liu&#39;s Space</title>
-    <link>https://www.jiaaming.cn/tags/tech/</link>
-    <description>Recent content in Tech on James Liu&#39;s Space</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language>
-    <lastBuildDate>Sat, 03 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.jiaaming.cn/tags/tech/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Microsoft Intern Summary: Optimizing VSCode Gradle Extension</title>
-      <link>https://www.jiaaming.cn/posts/ms-intern-summary/</link>
-      <pubDate>Sat, 03 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jiaaming.cn/posts/ms-intern-summary/</guid>
-      
-      <description>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#project-background&#34;&gt;Project Background&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#communication-between-servers&#34;&gt;Communication Between Servers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#architecture-before-the-merge&#34;&gt;Architecture Before the Merge&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#why-merge&#34;&gt;Why Merge?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#how-to-merge&#34;&gt;How to Merge&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#architecture-after-the-merge&#34;&gt;Architecture After the Merge&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#step-1-merging-task-server-and-build-server&#34;&gt;Step 1: Merging Task Server and Build Server&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#challenges&#34;&gt;Challenges&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#connection-workflow&#34;&gt;Connection Workflow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#step-2-merging-language-server-to-gradle-server&#34;&gt;Step 2: Merging Language Server to Gradle Server&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#performance-after-merge&#34;&gt;Performance After Merge&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#how-was-performance-measured&#34;&gt;How Was Performance Measured?&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#pre-merge-memory-monitoring&#34;&gt;Pre-Merge Memory Monitoring&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#post-merge-memory-monitoring&#34;&gt;Post-Merge Memory Monitoring&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#performance-results&#34;&gt;Performance Results&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#small&#34;&gt;Small&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#medium&#34;&gt;Medium&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#large&#34;&gt;Large&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jiaaming.cn/posts/ms-intern-summary/#super-large&#34;&gt;Super Large&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;project-background&#34;&gt;Project Background&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/20240803213701.png&#34; alt=&#34;Project Image&#34;&gt;&lt;/p&gt;
-&lt;p&gt;During my internship at Microsoft, I worked on the &lt;a href=&#34;https://github.com/microsoft/vscode-gradle&#34;&gt;VSCode Gradle Extension&lt;/a&gt;. This extension was initially divided into three components:&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Building a Simple AI Conversational Assistant with Langchain.js</title>
-      <link>https://www.jiaaming.cn/posts/tech-pet-sys/</link>
-      <pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jiaaming.cn/posts/tech-pet-sys/</guid>
-      
-      <description>&lt;p&gt;For my final undergraduate professional course, Software Development Practicum, I was tasked with developing a virtual veterinary hospital learning system that required implementing an AI conversational assistant. The requirements were somewhat ambiguous. Considering that the other components consisted mainly of basic CRUD operations, my initial approach was to explore integrating these operations with an AI dialogue system capable of querying information about medications and clinical cases stored in the database.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Paper Management System Based on Vue-Springboot</title>
-      <link>https://www.jiaaming.cn/posts/tech-paper-sys/</link>
-      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.jiaaming.cn/posts/tech-paper-sys/</guid>
-      
-      <description>&lt;p&gt;Demo link: &lt;a href=&#34;https://www.bilibili.com/video/BV1dr4y1u7Vq/?spm_id_from=333.999.0.0&#34;&gt;ECNU-2022Spring-DatabaseTermProject Group 4_Bilibili&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;about-login-information-and-permission-display&#34;&gt;About Login Information and Permission Display&lt;/h3&gt;
-&lt;p&gt;Here, sessionStorage is used to store user information and permissions (ideally, they should be returned together as user information, but here they are stored separately). Subsequent access to the left Aside of the page can also be resolved based on the stored sessionStorage.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;The sessionStorage property allows you to access a session Storage object. It is similar to localStorage, except that the data stored in localStorage has no expiration time set, while the data stored in sessionStorage is cleared when the page session ends. The page session lasts as long as the browser is open, and reloading or restoring the page retains the original page session. &lt;strong&gt;Opening a page in a new tab or window initializes a new session in the top-level browsing context,&lt;/strong&gt; which is different from how session cookies work.&lt;/em&gt;&lt;/p&gt;</description>
-      
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on James Liu's Space</title><link>http://localhost:1313/tags/tech/</link><description>Recent content in Tech on James Liu's Space</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sat, 03 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>Microsoft Intern Summary: Optimizing VSCode Gradle Extension</title><link>http://localhost:1313/posts/ms-intern-summary/</link><pubDate>Sat, 03 Aug 2024 00:00:00 +0000</pubDate><guid>http://localhost:1313/posts/ms-intern-summary/</guid><description>&lt;ul>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#project-background">Project Background&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#communication-between-servers">Communication Between Servers&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#architecture-before-the-merge">Architecture Before the Merge&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#why-merge">Why Merge?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#how-to-merge">How to Merge&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#architecture-after-the-merge">Architecture After the Merge&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#step-1-merging-task-server-and-build-server">Step 1: Merging Task Server and Build Server&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#challenges">Challenges&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#connection-workflow">Connection Workflow&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#step-2-merging-language-server-to-gradle-server">Step 2: Merging Language Server to Gradle Server&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#performance-after-merge">Performance After Merge&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#how-was-performance-measured">How Was Performance Measured?&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#pre-merge-memory-monitoring">Pre-Merge Memory Monitoring&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#post-merge-memory-monitoring">Post-Merge Memory Monitoring&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#performance-results">Performance Results&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#small">Small&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#medium">Medium&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#large">Large&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://localhost:1313/posts/ms-intern-summary/#super-large">Super Large&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="project-background">Project Background&lt;/h2>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/Jiaaming/blogImage/main/pic/20240803213701.png" alt="Project Image">&lt;/p>
+&lt;p>During my internship at Microsoft, I worked on the &lt;a href="https://github.com/microsoft/vscode-gradle">VSCode Gradle Extension&lt;/a>. This extension was initially divided into three components:&lt;/p></description></item><item><title>Building a Simple AI Conversational Assistant with Langchain.js</title><link>http://localhost:1313/posts/tech-pet-sys/</link><pubDate>Mon, 22 Apr 2024 00:00:00 +0000</pubDate><guid>http://localhost:1313/posts/tech-pet-sys/</guid><description>&lt;p>For my final undergraduate professional course, Software Development Practicum, I was tasked with developing a virtual veterinary hospital learning system that required implementing an AI conversational assistant. The requirements were somewhat ambiguous. Considering that the other components consisted mainly of basic CRUD operations, my initial approach was to explore integrating these operations with an AI dialogue system capable of querying information about medications and clinical cases stored in the database.&lt;/p></description></item><item><title>Paper Management System Based on Vue-Springboot</title><link>http://localhost:1313/posts/tech-paper-sys/</link><pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/posts/tech-paper-sys/</guid><description>&lt;p>Demo link: &lt;a href="https://www.bilibili.com/video/BV1dr4y1u7Vq/?spm_id_from=333.999.0.0">ECNU-2022Spring-DatabaseTermProject Group 4_Bilibili&lt;/a>&lt;/p>
+&lt;h3 id="about-login-information-and-permission-display">About Login Information and Permission Display&lt;/h3>
+&lt;p>Here, sessionStorage is used to store user information and permissions (ideally, they should be returned together as user information, but here they are stored separately). Subsequent access to the left Aside of the page can also be resolved based on the stored sessionStorage.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;em>The sessionStorage property allows you to access a session Storage object. It is similar to localStorage, except that the data stored in localStorage has no expiration time set, while the data stored in sessionStorage is cleared when the page session ends. The page session lasts as long as the browser is open, and reloading or restoring the page retains the original page session. &lt;strong>Opening a page in a new tab or window initializes a new session in the top-level browsing context,&lt;/strong> which is different from how session cookies work.&lt;/em>&lt;/p></description></item></channel></rss>
